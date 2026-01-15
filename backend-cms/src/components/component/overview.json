@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_component_overviews",
+  "info": {
+    "displayName": "overview",
+    "icon": "eye"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

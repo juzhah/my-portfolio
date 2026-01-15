@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_key_features",
+  "info": {
+    "displayName": "key_features",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "component",
+      "component": "shared.tag",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

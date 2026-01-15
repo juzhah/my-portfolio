@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_challenge_solutions",
+  "info": {
+    "displayName": "challenge_solution",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "challenge": {
+      "type": "text"
+    },
+    "solution": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
