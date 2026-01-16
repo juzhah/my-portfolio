@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_tags",
+  "info": {
+    "displayName": "item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

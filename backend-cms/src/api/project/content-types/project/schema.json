@@ -28,6 +28,28 @@
         "images",
         "files"
       ]
+    },
+    "type": {
+      "type": "string"
+    },
+    "project_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "projects"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "component.overview",
+        "component.challenge-solution",
+        "component.key-features"
+      ]
+    },
+    "stacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stack.stack"
     }
   }
 }
