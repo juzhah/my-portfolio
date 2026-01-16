@@ -1,6 +1,7 @@
 "use server";
 import Image from "next/image";
 import Stack from "../ui/image-stack/stack";
+import { Suspense } from "react";
 const images = [
   "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format",
   "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format",
@@ -19,16 +20,23 @@ async function About() {
               {/* ABOUT CARD */}
               <div className="grid grid-cols-2">
                 <div className="col-span-1">
-                  <Stack
-                    randomRotation
-                    autoplay
-                    pauseOnHover
-                    cards={images.map((image, idx) => {
-                      return (
-                        <Image src={image} alt="i1" width={208} height={208} />
-                      );
-                    })}
-                  />
+                  <Suspense>
+                    <Stack
+                      randomRotation
+                      autoplay
+                      pauseOnHover
+                      cards={images.map((image, idx) => {
+                        return (
+                          <Image
+                            src={image}
+                            alt="i1"
+                            width={208}
+                            height={208}
+                          />
+                        );
+                      })}
+                    />
+                  </Suspense>
                 </div>
 
                 <div className="col-span-1">

@@ -1,8 +1,8 @@
 import { EnvConfig } from "@/lib/utils";
-import { Project } from "../types";
+import { Stack } from "../types";
 
-export async function getProjects(): Promise<Project[]> {
-  const res = await fetch("http://localhost:1337/api/projects", {
+export async function getStacks(): Promise<Stack[]> {
+  const res = await fetch("http://localhost:1337/api/stacks?populate=tools", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
@@ -12,15 +12,15 @@ export async function getProjects(): Promise<Project[]> {
 
   if (!res.ok) {
     // This will trigger the closest error.js boundary
-    throw new Error(`Failed to fetch projects: ${res.statusText}`);
+    throw new Error(`Failed to fetch stacks: ${res.statusText}`);
   }
 
-  const { data: projects } = await res.json();
+  const { data: stacks } = await res.json();
 
   /* Process blocking error if no projects to show bcz why have a portfolio with no projects? xd */
-  if (!projects || projects.lenght < 1) {
+  if (!stacks || stacks.lenght < 1) {
     throw new Error(`No projects to load into site`);
   }
 
-  return projects;
+  return stacks;
 }
