@@ -26,13 +26,13 @@ export default function Hero() {
               style={{ animationDelay: "2s" }}
             >
               <a
-                href="https://www.linkedin.com/in/fahim-sium/"
+                href="https://www.linkedin.com/in/juan-lozada/"
                 className="hover:text-primary transition-colors"
               >
                 LINKEDIN
               </a>
               <a
-                href="https://github.com/FahimMIST"
+                href="https://github.com/juzhah"
                 className="hover:text-primary transition-colors"
               >
                 GITHUB
@@ -78,14 +78,16 @@ export default function Hero() {
               </p>
               <div className="space-y-2">
                 <p className="text-primary font-medium">+507 6309-9430</p>
-                <p className="text-gray-400 text-sm">
-                  estebanlozadah@gmail.com
-                </p>
+                <a href="mailto:juanlozadahe@gmail.com">
+                  <p className="text-gray-400 text-sm">
+                    estebanlozadah@gmail.com
+                  </p>
+                </a>
               </div>
             </div>
             <div>
               <a
-                href="https://docs.google.com/document/d/1V9ADcrPSPR3Wmstu33u_-xhscigUlBqZjkW2vSuQYH8/export?format=pdf"
+                href="https://drive.google.com/file/d/107QF2BAttNw-Hf-SUmj4c5HLcsbUGMJh/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 font-bold uppercase tracking-widest text-white transition-all duration-300 rounded-lg active:scale-95 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-primary/50 shadow-lg hover:shadow-[0_0_30px_rgba(255,90,60,0.3)] hover:-translate-y-1"

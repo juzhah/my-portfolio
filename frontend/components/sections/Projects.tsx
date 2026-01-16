@@ -1,20 +1,9 @@
+import { getProjects } from "@/app/data/get-projects";
+import { Project } from "@/app/types";
 import { EnvConfig } from "@/lib/utils";
 
 async function Projects() {
-  const res = await fetch("http://localhost:1337/api/projects", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (!res.ok) {
-    // This will trigger the closest error.js boundary
-    throw new Error(`Failed to fetch projects: ${res.statusText}`);
-  }
-
-  const { data: projects } = await res.json();
+  const projects: Project[] = await getProjects();
 
   return (
     <section id="projects" className="py-32 border-t border-white/5">
@@ -41,7 +30,7 @@ async function Projects() {
   );
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group cursor-pointer">
       <div className="relative h-100 overflow-hidden mb-6 bg-dark-card rounded-lg border border-white/5">

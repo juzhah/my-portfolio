@@ -1,4 +1,3 @@
-import React from "react";
 import MagicBento from "../ui/magic-bento/bento-grid";
 
 function Skills() {

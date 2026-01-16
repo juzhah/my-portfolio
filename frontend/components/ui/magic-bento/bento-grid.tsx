@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
-import { useMobileDetection } from "./hooks";
+import React, { useRef } from "react";
+import { Badge } from "../badge";
 import { GlobalSpotlight } from "./bento-spotlight";
 import { BentoCardGrid } from "./BentoGrid";
-import { Badge } from "../badge";
+import { useMobileDetection } from "./hooks";
 
 export interface BentoCardProps {
   color?: string;
@@ -131,7 +131,7 @@ const MagicBento: React.FC<BentoProps> = ({
           
           .card-responsive {
             grid-template-columns: 1fr;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
             padding: 0.5rem;
           }
@@ -327,7 +327,7 @@ const MagicBento: React.FC<BentoProps> = ({
                 Math.hypot(x, y),
                 Math.hypot(x - rect.width, y),
                 Math.hypot(x, y - rect.height),
-                Math.hypot(x - rect.width, y - rect.height)
+                Math.hypot(x - rect.width, y - rect.height),
               );
 
               const ripple = document.createElement("div");
@@ -357,7 +357,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   duration: 0.8,
                   ease: "power2.out",
                   onComplete: () => ripple.remove(),
-                }
+                },
               );
             };
 
@@ -469,7 +469,7 @@ const MagicBento: React.FC<BentoProps> = ({
                     Math.hypot(x, y),
                     Math.hypot(x - rect.width, y),
                     Math.hypot(x, y - rect.height),
-                    Math.hypot(x - rect.width, y - rect.height)
+                    Math.hypot(x - rect.width, y - rect.height),
                   );
 
                   const ripple = document.createElement("div");
@@ -499,7 +499,7 @@ const MagicBento: React.FC<BentoProps> = ({
                       duration: 0.8,
                       ease: "power2.out",
                       onComplete: () => ripple.remove(),
-                    }
+                    },
                   );
                 };
 
@@ -623,7 +623,7 @@ const MagicBento: React.FC<BentoProps> = ({
                 Math.hypot(x, y),
                 Math.hypot(x - rect.width, y),
                 Math.hypot(x, y - rect.height),
-                Math.hypot(x - rect.width, y - rect.height)
+                Math.hypot(x - rect.width, y - rect.height),
               );
 
               const ripple = document.createElement("div");
@@ -653,7 +653,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   duration: 0.8,
                   ease: "power2.out",
                   onComplete: () => ripple.remove(),
-                }
+                },
               );
             };
 

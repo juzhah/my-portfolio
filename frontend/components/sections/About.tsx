@@ -1,7 +1,6 @@
-import React from "react";
-import Stack from "../ui/image-stack/stack";
-import { image } from "motion/react-client";
+"use server";
 import Image from "next/image";
+import Stack from "../ui/image-stack/stack";
 const images = [
   "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format",
   "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format",
@@ -9,7 +8,7 @@ const images = [
   "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format",
 ];
 
-function About() {
+async function About() {
   return (
     <section id="about" className="py-32 relative">
       <div className="max-w-350 mx-auto px-6 lg:px-12">
@@ -17,6 +16,7 @@ function About() {
           <div className="sticky top-32">
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
             <div className=" bg-dark-card border border-white/5 p-8 rounded-2xl overflow-hidden group">
+              {/* ABOUT CARD */}
               <div className="grid grid-cols-2">
                 <div className="col-span-1">
                   <Stack
