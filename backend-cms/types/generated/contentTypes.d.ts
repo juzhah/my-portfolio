@@ -462,8 +462,8 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     project_tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
-    stacks: Schema.Attribute.Relation<'oneToMany', 'api::stack.stack'>;
     title: Schema.Attribute.String;
+    tools: Schema.Attribute.Relation<'oneToMany', 'api::tool.tool'>;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -492,7 +492,7 @@ export interface ApiStackStack extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     stackId: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
-    tools: Schema.Attribute.Component<'shared.tag', true>;
+    tools: Schema.Attribute.Relation<'oneToMany', 'api::tool.tool'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

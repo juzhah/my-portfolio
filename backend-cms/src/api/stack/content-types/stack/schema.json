@@ -17,14 +17,14 @@
     "description": {
       "type": "text"
     },
-    "tools": {
-      "type": "component",
-      "component": "shared.tag",
-      "repeatable": true
-    },
     "stackId": {
       "type": "uid",
       "targetField": "title"
+    },
+    "tools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tool.tool"
     }
   }
 }

@@ -46,10 +46,10 @@
         "component.key-features"
       ]
     },
-    "stacks": {
+    "tools": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::stack.stack"
+      "target": "api::tool.tool"
     }
   }
 }
