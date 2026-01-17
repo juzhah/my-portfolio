@@ -1,5 +1,5 @@
-import { Stack, Tool } from "@/app/types";
-import { Badge } from "../badge";
+"use client";
+import { Stack } from "@/app/types";
 import { useMagicBento } from "./hook/useMagicBento";
 import StackCard from "./StackCard";
 
@@ -67,7 +67,7 @@ export default function BentoCards({
       ref={cardRef}
     >
       {stacksList.map((stack, idx) => {
-        return <StackCard stackItem={stack} />;
+        return <StackCard stackItem={stack} key={idx} />;
       })}
     </div>
   );

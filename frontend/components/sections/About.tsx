@@ -29,6 +29,7 @@ async function About() {
                         return (
                           <Image
                             src={image}
+                            key={idx}
                             alt="i1"
                             width={208}
                             height={208}
@@ -129,7 +130,7 @@ async function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  I'm passionate about my work and disciplined towards
+                  I&apos;m passionate about my work and disciplined towards
                   accomplishing my goals. This has been like this since I was 17
                   and started making my way through life. Since then, Ive been
                   gaining experience in diverse environments, constantly
@@ -145,9 +146,9 @@ async function About() {
               </div>
             </div>
             <div className="flex items-center gap-4 mb-12">
-              <span className="text-6xl font-bold text-primary">4+</span>
+              <span className="text-6xl font-bold text-primary">1+</span>
               <span className="text-white font-medium leading-tight">
-                Years Of <br />
+                Year Of <br />
                 Global Experience
               </span>
             </div>

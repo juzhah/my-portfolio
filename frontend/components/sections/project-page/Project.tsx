@@ -1,69 +1,33 @@
-import { EnvConfig } from "@/lib/utils";
-import { notFound } from "next/navigation";
+import { Project } from "@/app/types";
+import { ChevronLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-async function getProject(slug: string) {
-  const res = await fetch(
-    `http://localhost:1337/api/projects?filters[slug][$eq]=${slug}`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
-        "Content-Type": "application/json",
-      },
-    }
-  );
-
-  if (!res.ok) {
-    // This will trigger the closest error.js boundary
-    throw new Error(`Failed to fetch projects: ${res.statusText}`);
-  }
-
-  return res.json();
-}
-
-async function ProjectContent({ slug }: { slug: string }) {
-  const project = await getProject(slug);
-
-  if (project.data.length < 1) {
-    notFound();
-  }
-
-  console.log(project.data);
-  const { title, description } = project.data[0];
+async function ProjectContent({ project }: { project: Project }) {
+  const { title, description } = project;
 
   return (
     <div className="min-h-screen bg-dark-bg">
       <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent z-10"></div>
-        <img
+        <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-dark-bg/50 to-transparent z-10"></div>
+        <Image
           src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"
           alt="Fresh Buying &amp; Distribution Network"
           className="w-full h-full object-cover"
         />
         <div className="absolute top-28 left-0 w-full z-20 px-6 lg:px-12">
-          <div className="max-w-[1400px] mx-auto">
-            <button className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-white hover:bg-primary transition-colors text-sm font-bold uppercase tracking-wider">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="lucide lucide-arrow-left w-4 h-4"
-              >
-                <path d="m12 19-7-7 7-7"></path>
-                <path d="M19 12H5"></path>
-              </svg>
+          <div className="max-w-350 mx-auto">
+            <Link
+              href={"/#projects"}
+              className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-white hover:bg-primary transition-colors text-sm font-bold uppercase tracking-wider"
+            >
+              <ChevronLeft size={18} />
               Projects
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 -mt-20 relative z-20 pb-20">
+      <div className="max-w-350 mx-auto px-6 lg:px-12 -mt-20 relative z-20 pb-20">
         <div className="bg-dark-card border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl mb-12 flex flex-col md:flex-row justify-between gap-8 items-start">
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -81,7 +45,7 @@ async function ProjectContent({ slug }: { slug: string }) {
               {description}
             </p>
           </div>
-          <div className="flex flex-col gap-4 w-full md:w-auto min-w-[200px]"></div>
+          <div className="flex flex-col gap-4 w-full md:w-auto min-w-50"></div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-12">
@@ -198,7 +162,7 @@ async function ProjectContent({ slug }: { slug: string }) {
                     <path d="m9 11 3 3L22 4"></path>
                   </svg>
                   <span className="text-gray-300 font-medium">
-                    Centralized "Actual Demand" Compilation
+                    Centralized &quot;Actual Demand&quot; Compilation
                   </span>
                 </div>
                 <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">

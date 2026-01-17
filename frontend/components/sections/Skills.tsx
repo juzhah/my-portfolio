@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import MagicBento from "../ui/magic-bento/bento-grid";
+import MagicBento from "../ui/magic-bento/MagicBento";
 import { getStacks } from "@/app/data/get-skills";
 
 async function Skills() {

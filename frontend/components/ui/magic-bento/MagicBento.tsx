@@ -1,14 +1,11 @@
 "use client";
-
+import { Stack } from "@/app/types";
 import React, { useRef } from "react";
-import { Badge } from "../badge";
+import BentoCards from "./bento-card";
 import { GlobalSpotlight } from "./bento-spotlight";
 import { BentoCardGrid } from "./BentoGrid";
 import { useMagicBento } from "./hook/useMagicBento";
-import BentoCards, { BentoItem } from "./bento-card";
 import StackCard from "./StackCard";
-import { getStacks } from "@/app/data/get-skills";
-import { Stack } from "@/app/types";
 
 export interface BentoProps {
   stacks: Stack[];
@@ -25,21 +22,15 @@ export interface BentoProps {
   enableMagnetism?: boolean;
 }
 
-const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = "132, 0, 255";
 
-const MagicBento: React.FC<BentoProps> = async (props) => {
+const MagicBento: React.FC<BentoProps> = (props) => {
   const {
     stacks,
-    textAutoHide,
     enableSpotlight,
-    enableBorderGlow,
     disableAnimations,
     spotlightRadius,
-    enableTilt,
     glowColor = DEFAULT_GLOW_COLOR,
-    clickEffect,
-    enableMagnetism,
   } = props;
 
   const gridRef = useRef<HTMLDivElement>(null);

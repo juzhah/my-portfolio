@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -48,67 +49,67 @@ function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
+                <Link
                   href="/#home"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#about"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#/career"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   Experience
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#/works"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#/services"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#match"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   Profile Match
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#/contact"
                   className="text-gray-500 hover:text-primary transition-colors text-sm flex items-center group cursor-pointer"
                 >
                   <span className="w-1.5 h-1.5 bg-gray-700 rounded-full mr-3 group-hover:bg-primary transition-colors"></span>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -118,7 +119,7 @@ function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a
+                <Link
                   href="https://github.com/FahimMIST"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -157,10 +158,10 @@ function Footer() {
                     <path d="M7 7h10v10"></path>
                     <path d="M7 17 17 7"></path>
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.linkedin.com/in/fahim-sium/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -200,10 +201,10 @@ function Footer() {
                     <path d="M7 7h10v10"></path>
                     <path d="M7 17 17 7"></path>
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.facebook.com/fahim.montasir.181694"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -241,10 +242,10 @@ function Footer() {
                     <path d="M7 7h10v10"></path>
                     <path d="M7 17 17 7"></path>
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="mailto:notetofahim@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -283,10 +284,10 @@ function Footer() {
                     <path d="M7 7h10v10"></path>
                     <path d="M7 17 17 7"></path>
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.datacamp.com/portfolio/FahimMontasir"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -326,10 +327,10 @@ function Footer() {
                     <path d="M7 7h10v10"></path>
                     <path d="M7 17 17 7"></path>
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7363309081899520001"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -370,7 +371,7 @@ function Footer() {
                     <path d="M7 7h10v10"></path>
                     <path d="M7 17 17 7"></path>
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

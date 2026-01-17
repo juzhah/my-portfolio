@@ -6,6 +6,7 @@ import {
   useTransform,
   type PanInfo,
 } from "motion/react";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 interface CardRotateProps {
@@ -28,7 +29,7 @@ function CardRotate({
 
   function handleDragEnd(
     _event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
+    info: PanInfo,
   ) {
     if (
       Math.abs(info.offset.x) > sensitivity ||
@@ -81,7 +82,6 @@ interface StackProps {
 }
 
 export default function Stack({
-  randomRotation = false,
   sensitivity = 200,
   cards = [],
   animationConfig = { stiffness: 260, damping: 20 },
@@ -118,7 +118,7 @@ export default function Stack({
         {
           id: 1,
           content: (
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format"
               alt="card-1"
               className="w-full h-full object-cover pointer-events-none"
@@ -128,7 +128,7 @@ export default function Stack({
         {
           id: 2,
           content: (
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format"
               alt="card-2"
               className="w-full h-full object-cover pointer-events-none"
@@ -138,7 +138,7 @@ export default function Stack({
         {
           id: 3,
           content: (
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format"
               alt="card-3"
               className="w-full h-full object-cover pointer-events-none"
@@ -148,7 +148,7 @@ export default function Stack({
         {
           id: 4,
           content: (
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format"
               alt="card-4"
               className="w-full h-full object-cover pointer-events-none"
@@ -158,12 +158,6 @@ export default function Stack({
       ];
     }
   });
-
-  useEffect(() => {
-    if (cards.length) {
-      setStack(cards.map((content, index) => ({ id: index + 1, content })));
-    }
-  }, [cards]);
 
   const sendToBack = (id: number) => {
     setStack((prev) => {
@@ -196,7 +190,6 @@ export default function Stack({
       onMouseLeave={() => pauseOnHover && setIsPaused(false)}
     >
       {stack.map((card, index) => {
-        const randomRotate = randomRotation ? Math.random() * 10 - 5 : 0;
         return (
           <CardRotate
             key={card.id}
@@ -208,7 +201,7 @@ export default function Stack({
               className="rounded-2xl overflow-hidden w-full h-full"
               onClick={() => shouldEnableClick && sendToBack(card.id)}
               animate={{
-                rotateZ: (stack.length - index - 1) * 4 + randomRotate,
+                rotateZ: (stack.length - index - 1) * 4,
                 scale: 1 + index * 0.06 - stack.length * 0.06,
                 transformOrigin: "90% 90%",
               }}

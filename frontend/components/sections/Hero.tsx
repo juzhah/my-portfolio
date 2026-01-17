@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section
@@ -25,18 +28,18 @@ export default function Hero() {
               className="mt-8 lg:mt-16 hidden lg:flex items-center space-x-6 text-xs font-bold tracking-widest text-gray-500 animate-fade-in-up"
               style={{ animationDelay: "2s" }}
             >
-              <a
+              <Link
                 href="https://www.linkedin.com/in/juan-lozada/"
                 className="hover:text-primary transition-colors"
               >
                 LINKEDIN
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://github.com/juzhah"
                 className="hover:text-primary transition-colors"
               >
                 GITHUB
-              </a>
+              </Link>
             </div>
           </div>
           <div className="lg:col-span-4 relative flex justify-center lg:justify-center order-2 lg:order-2">
@@ -49,7 +52,7 @@ export default function Hero() {
             >
               <div className="absolute inset-0 bg-dark-card rounded-t-[100px] rounded-b-[20px] transform rotate-3 border border-white/5"></div>
               <div className="absolute inset-0 w-full h-full rounded-t-[100px] rounded-b-[20px] overflow-hidden">
-                <img
+                <Image
                   src="https://drive.google.com/thumbnail?id=12TSvdSyhPhCHovFODqfuRYvPqeMt1ALP&amp;sz=w1000"
                   alt="Esteban Lozada standing confidently in professional attire, representing his role as a Technical Product Manager"
                   width="500"
@@ -78,15 +81,15 @@ export default function Hero() {
               </p>
               <div className="space-y-2">
                 <p className="text-primary font-medium">+507 6309-9430</p>
-                <a href="mailto:juanlozadahe@gmail.com">
+                <Link href="mailto:juanlozadahe@gmail.com">
                   <p className="text-gray-400 text-sm">
                     estebanlozadah@gmail.com
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
             <div>
-              <a
+              <Link
                 href="https://drive.google.com/file/d/107QF2BAttNw-Hf-SUmj4c5HLcsbUGMJh/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -111,7 +114,7 @@ export default function Hero() {
                 <span className="text-gray-200 group-hover:text-white transition-colors">
                   Download Resume
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,7 @@
 "use server";
 
+import Link from "next/link";
+
 async function Contact() {
   return (
     <section
@@ -14,12 +16,12 @@ async function Contact() {
               Contact
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Let's work <br />
+              Let&apos;s work <br />
               together.
             </h2>
             <p className="text-gray-400 max-w-md leading-relaxed mb-12">
-              I'm currently available for product roles and consulting. If you
-              need a Product Manager who understands both the code and the
+              I&apos;m currently available for product roles and consulting. If
+              you need a Product Manager who understands both the code and the
               customer, get in touch.
             </p>
             <div className="space-y-6">
@@ -43,12 +45,12 @@ async function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-sm mb-0.5">Email</h4>
-                  <a
-                    href="mailto:notetofahim@gmail.com"
+                  <Link
+                    href="mailto:juanlozadahe@gmail.com"
                     className="text-gray-500 hover:text-white transition-colors text-sm"
                   >
                     notetofahim@gmail.com
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center gap-4 group">
