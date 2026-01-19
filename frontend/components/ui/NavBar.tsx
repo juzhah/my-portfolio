@@ -9,7 +9,7 @@ function NavBar() {
       aria-label="Main Navigation"
       className="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-white/5 transition-all duration-300"
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-350 mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0 cursor-pointer group">
             <div className="w-12 h-12 bg-primary flex items-center justify-center shadow-lg shadow-primary/20 transition-transform group-hover:scale-105 rounded-lg">

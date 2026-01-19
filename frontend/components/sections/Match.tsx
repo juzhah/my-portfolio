@@ -6,7 +6,7 @@ function Match() {
     >
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-accent-teal/5 rounded-full blur-[80px] pointer-events-none"></div>
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-350 mx-auto px-6 lg:px-12 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
             <svg

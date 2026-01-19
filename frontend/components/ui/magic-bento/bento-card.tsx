@@ -50,7 +50,7 @@ export default function BentoCards({
 
   return (
     <div
-      className={`card flex flex-col justify-between relative min-h-10rem w-full max-w-full p-5 rounded-2xl border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+      className={`card flex flex-col gap-y-12 relative min-h-10rem w-full max-w-full p-8  rounded-2xl border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
         borderGlow ? "card--border-glow" : ""
       }`}
       style={

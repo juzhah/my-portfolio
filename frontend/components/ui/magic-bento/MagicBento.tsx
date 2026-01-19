@@ -22,7 +22,7 @@ export interface BentoProps {
   enableMagnetism?: boolean;
 }
 
-const DEFAULT_GLOW_COLOR = "132, 0, 255";
+const DEFAULT_GLOW_COLOR = "218, 60, 40";
 
 const MagicBento: React.FC<BentoProps> = (props) => {
   const {
@@ -48,7 +48,7 @@ const MagicBento: React.FC<BentoProps> = (props) => {
             --glow-radius: 200px;
             --glow-color: ${glowColor};
             --border-color: #392e4e;
-            --background-dark: #060010;
+            --background-dark: var(--card-surface);
             --white: hsl(0, 0%, 100%);
             --purple-primary: rgba(132, 0, 255, 1);
             --purple-glow: rgba(132, 0, 255, 0.2);
@@ -178,7 +178,7 @@ const MagicBento: React.FC<BentoProps> = (props) => {
         {/* Heading | First Grid element */}
         <div
           className={
-            "col-span-2 card flex flex-col relative w-full max-w-full p-5 rounded-4xl  font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
+            "col-span-2 card flex flex-col relative w-full max-w-full p-8 rounded-4xl  font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
           }
           ref={headerRef}
         >
@@ -221,7 +221,7 @@ const MagicBento: React.FC<BentoProps> = (props) => {
         {/* Last Card Grid element*/}
         <div
           className={
-            "col-span-2 flex flex-col justify-between relative w-full max-w-full pt-5 pl-5 rounded-4xl  font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
+            "col-span-2 flex flex-col justify-between relative w-full max-w-full pt-8 lg:pl-8 rounded-4xl  font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
           }
           ref={footerRef}
         >
