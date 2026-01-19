@@ -1,3 +1,4 @@
+import { ArrowDownToLine } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -95,22 +96,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 font-bold uppercase tracking-widest text-white transition-all duration-300 rounded-lg active:scale-95 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-primary/50 shadow-lg hover:shadow-[0_0_30px_rgba(255,90,60,0.3)] hover:-translate-y-1"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-download w-5 h-5 transition-transform group-hover:-translate-y-1 text-primary group-hover:text-white"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" x2="12" y1="15" y2="3"></line>
-                </svg>
+                <ArrowDownToLine className="lucide lucide-download w-5 h-5 transition-transform group-hover:-translate-y-1 text-primary group-hover:text-white" />
                 <span className="text-gray-200 group-hover:text-white transition-colors">
                   Download Resume
                 </span>

@@ -1,6 +1,7 @@
 "use server";
 import { getProjects } from "@/app/data/get-projects";
 import { Project } from "@/app/types";
+import { ArrowUpRight, NotebookText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -48,42 +49,14 @@ function ProjectCard({ project }: { project: Project }) {
           />
           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center z-20 backdrop-blur-sm">
             <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="lucide lucide-plus w-8 h-8 text-white"
-              >
-                <path d="M5 12h14"></path>
-                <path d="M12 5v14"></path>
-              </svg>
+              <NotebookText />
             </div>
             <span className="text-white font-bold mt-4 tracking-widest text-sm uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
               View Case Study
             </span>
           </div>
           <div className="absolute top-0 right-0 bg-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="lucide lucide-arrow-up-right text-white w-6 h-6"
-            >
-              <path d="M7 7h10v10"></path>
-              <path d="M7 17 17 7"></path>
-            </svg>
+            <ArrowUpRight />
           </div>
         </div>
         <div className="flex justify-between items-start h-full">

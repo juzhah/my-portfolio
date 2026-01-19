@@ -1,33 +1,35 @@
-[] replace al html svg elements with react elements
-[] fix bento cards ui
-[] fix bento grid spotlight
-[] fix bento card repeated label ui
-[] fix spacing between label and content in bento cards
+[✅] replace al html svg elements with react elements
+[_] fix bento cards ui
+[_] fix bento grid spotlight
+[_] fix bento card repeated label ui
+[_] fix spacing between label and content in bento cards
 
-[] enhance about section
-[] modify projects section
-[] add more animations to header (name title, open to words loop)
-[] add formal picture for hero
-[] add animated background (morphing squares)
-[] change pfp frame
-[] add icons to social links in hero
-[] fix download cv bg color on hover
+[_] enhance about section
+[_] modify projects section
+[_] add more animations to header (name title, open to words loop)
+[_] add formal picture for hero
+[_] add animated background (morphing squares)
+[_] change pfp frame
+[_] add icons to social links in hero
+[_] fix download cv bg color on hover
 
-[] create professional experience collection in cms
+[_] create professional experience collection in cms
 
-[] add "In Development" badge to projec collection and UI for its card and page
-[] fix main tag in project card
-[] fix cover image in project card
-[] gather images for projects
+[_] add "In Development" badge to projec collection and UI for its card and page
+[_] fix main tag in project card
+[_] fix cover image in project card
+[_] gather images for projects
 
-[] gather images for about section
+[_] gather images for about section
 
-[] CREATE NAVBAR
-[] CREATE FOOTER
+[_] CREATE NAVBAR
+[_] CREATE FOOTER
 
-[] create certificates collection
-[] create certificates section UI
+[_] create certificates collection
+[_] create certificates section UI
 
-[]fix about stack images bug on mobile
-[]fix about card sticky bug on mobile
-[]fix MagicBento layout bug on mobile
+[_]fix about stack images bug on mobile
+[_]fix about card sticky bug on mobile
+[_]fix MagicBento layout bug on mobile
+
+[_]fix hover color on download resume button

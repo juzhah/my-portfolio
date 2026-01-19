@@ -1,5 +1,6 @@
 "use server";
 
+import { Mail, ShieldCheck, Send, Info } from "lucide-react";
 import Link from "next/link";
 
 async function Contact() {
@@ -27,21 +28,7 @@ async function Contact() {
             <div className="space-y-6">
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-mail w-5 h-5 text-primary"
-                  >
-                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                  </svg>
+                  <Mail />
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-sm mb-0.5">Email</h4>
@@ -55,21 +42,7 @@ async function Contact() {
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-shield-check w-5 h-5 text-accent-teal"
-                  >
-                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                    <path d="m9 12 2 2 4-4"></path>
-                  </svg>
+                  <ShieldCheck />
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-sm mb-0.5">
@@ -129,60 +102,17 @@ async function Contact() {
                 >
                   <span className="flex items-center justify-center gap-3 relative z-10">
                     Initialize Contact
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-send w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                    >
-                      <path d="m22 2-7 20-4-9-9-4Z"></path>
-                      <path d="M22 2 11 13"></path>
-                    </svg>
+                    <Send className="lucide lucide-send w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </span>
                 </button>
                 <div className="flex items-center justify-center gap-4 text-[10px] text-gray-600 uppercase tracking-widest">
                   <div className="flex items-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-info w-3 h-3"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 16v-4"></path>
-                      <path d="M12 8h.01"></path>
-                    </svg>
+                    <Info />
                     Secure Transmission
                   </div>
                   <div className="w-1 h-1 bg-gray-800 rounded-full"></div>
                   <div className="flex items-center gap-1.5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-shield-check w-3 h-3"
-                    >
-                      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                      <path d="m9 12 2 2 4-4"></path>
-                    </svg>
+                    <ShieldCheck />
                     End-to-end Encrypted
                   </div>
                 </div>

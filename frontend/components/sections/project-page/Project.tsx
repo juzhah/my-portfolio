@@ -1,5 +1,5 @@
 import { Project } from "@/app/types";
-import { ChevronLeft } from "lucide-react";
+import { CheckCheck, ChevronLeft, Info, Target, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,22 +52,7 @@ async function ProjectContent({ project }: { project: Project }) {
             <section>
               <div className="flex items-center gap-3 text-white mb-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-info w-5 h-5"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 16v-4"></path>
-                    <path d="M12 8h.01"></path>
-                  </svg>
+                  <Info />
                 </div>
                 <h2 className="text-2xl font-bold">Project Overview</h2>
               </div>
@@ -85,22 +70,7 @@ async function ProjectContent({ project }: { project: Project }) {
               <section>
                 <div className="flex items-center gap-3 text-white mb-4">
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 border border-red-500/20">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-target w-5 h-5"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <circle cx="12" cy="12" r="6"></circle>
-                      <circle cx="12" cy="12" r="2"></circle>
-                    </svg>
+                    <Target />
                   </div>
                   <h2 className="text-2xl font-bold">The Challenge</h2>
                 </div>
@@ -114,20 +84,7 @@ async function ProjectContent({ project }: { project: Project }) {
               <section>
                 <div className="flex items-center gap-3 text-white mb-4">
                   <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 border border-blue-500/20">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-zap w-5 h-5"
-                    >
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
+                    <Zap />
                   </div>
                   <h2 className="text-2xl font-bold">The Solution</h2>
                 </div>
@@ -146,123 +103,15 @@ async function ProjectContent({ project }: { project: Project }) {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-check-circle w-5 h-5 text-primary mr-3 mt-0.5 shrink-0"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                  </svg>
+                  <CheckCheck className="text-primary mr-3 mt-0.5 shrink-0" />
                   <span className="text-gray-300 font-medium">
                     Centralized &quot;Actual Demand&quot; Compilation
                   </span>
                 </div>
                 <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-check-circle w-5 h-5 text-primary mr-3 mt-0.5 shrink-0"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                  </svg>
+                  <CheckCheck className="text-primary mr-3 mt-0.5 shrink-0" />
                   <span className="text-gray-300 font-medium">
                     Multi-Gate Quality Control (QC) Protocols
-                  </span>
-                </div>
-                <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-check-circle w-5 h-5 text-primary mr-3 mt-0.5 shrink-0"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                  </svg>
-                  <span className="text-gray-300 font-medium">
-                    Real-time Transit Inconsistency Management
-                  </span>
-                </div>
-                <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-check-circle w-5 h-5 text-primary mr-3 mt-0.5 shrink-0"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                  </svg>
-                  <span className="text-gray-300 font-medium">
-                    Automated ERP Inventory Integration (STO/PO/DN)
-                  </span>
-                </div>
-                <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-check-circle w-5 h-5 text-primary mr-3 mt-0.5 shrink-0"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                  </svg>
-                  <span className="text-gray-300 font-medium">
-                    Wastage &amp; Damage Reconciliation Modules
-                  </span>
-                </div>
-                <div className="flex items-start p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-check-circle w-5 h-5 text-primary mr-3 mt-0.5 shrink-0"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <path d="m9 11 3 3L22 4"></path>
-                  </svg>
-                  <span className="text-gray-300 font-medium">
-                    Comprehensive Process Documentation (v6.0)
                   </span>
                 </div>
               </div>

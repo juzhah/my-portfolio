@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Stack from "../ui/image-stack/stack";
 import { Suspense } from "react";
+import { Cpu, Database, GraduationCap } from "lucide-react";
 const images = [
   "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format",
   "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format",
@@ -54,33 +55,12 @@ async function About() {
 
               {/* Education */}
               <div className="bg-white/5 p-8 border border-white/10 rounded-2xl relative overflow-hidden mt-8">
-                <div className="absolute top-4 right-4 text-accent-teal/20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-lock w-12 h-12"
-                  >
-                    <rect
-                      width="18"
-                      height="11"
-                      x="3"
-                      y="11"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
+                <div className=" flex justify-between">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Education
+                  </h3>
+                  <GraduationCap size={36} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Education
-                </h3>
                 <div className="mb-6">
                   <h4 className="text-gray-400 text-md  leading-relaxed">
                     UMECIT | Bachelor of Science in Systems and Programming
@@ -230,30 +210,6 @@ async function About() {
               </div>
 
               <div className="bg-white/5 p-8 border border-white/10 rounded-2xl relative overflow-hidden mt-8">
-                <div className="absolute top-4 right-4 text-accent-teal/20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-lock w-12 h-12"
-                  >
-                    <rect
-                      width="18"
-                      height="11"
-                      x="3"
-                      y="11"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
-                </div>
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Professional Ethics &amp; Security
                 </h3>
@@ -266,50 +222,13 @@ async function About() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-3 bg-dark-bg/50 px-4 py-2 rounded-lg border border-white/5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-database w-4 h-4 text-primary"
-                    >
-                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                      <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
-                      <path d="M3 12A9 3 0 0 0 21 12"></path>
-                    </svg>
+                    <Database />
                     <span className="text-xs text-gray-300 font-medium">
                       Data Encryption
                     </span>
                   </div>
                   <div className="flex items-center gap-3 bg-dark-bg/50 px-4 py-2 rounded-lg border border-white/5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="lucide lucide-cpu w-4 h-4 text-primary"
-                    >
-                      <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                      <rect x="9" y="9" width="6" height="6"></rect>
-                      <path d="M15 2v2"></path>
-                      <path d="M15 20v2"></path>
-                      <path d="M2 15h2"></path>
-                      <path d="M2 9h2"></path>
-                      <path d="M20 15h2"></path>
-                      <path d="M20 9h2"></path>
-                      <path d="M9 2v2"></path>
-                      <path d="M9 20v2"></path>
-                    </svg>
+                    <Cpu />
                     <span className="text-xs text-gray-300 font-medium">
                       Compliance Oversight
                     </span>
