@@ -2,6 +2,8 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Logo from "@/assets/logo.png";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -31,14 +33,20 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-350 mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="max-w-350 mx-auto px-6 lg:px-12 flex items-center justify-between ">
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl font-bold text-white tracking-tighter"
+          className="relative border w-12 h-12 rounded-lg bg-primary/30 text-2xl font-bold text-white tracking-tighter p-2 flex justify-center align-middle shadow-lg shadow-primary/50"
         >
-          J<span className="text-primary">.</span>L
-          <span className="text-primary">.</span>
+          E
+          <Image
+            src={Logo}
+            alt="Esteban Lozada's portfolio"
+            width={24}
+            height={24}
+            className="absolute -right-2 -bottom-2"
+          ></Image>
         </Link>
 
         {/* Desktop Menu */}

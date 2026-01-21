@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/assets/logo.png";
 
 function Footer() {
   return (
@@ -7,8 +9,15 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center mr-3 shadow-lg shadow-primary/20">
-                <span className="text-xl font-bold text-white">L.</span>
+              <div className="relative border w-12 h-12 rounded-lg bg-primary/30 text-2xl font-bold text-white tracking-tighter p-2 flex justify-center align-middle mr-3 shadow-lg shadow-primary/20">
+                E
+                <Image
+                  src={Logo}
+                  alt="Esteban Lozada's portfolio"
+                  width={24}
+                  height={24}
+                  className="absolute -right-2 -bottom-2"
+                ></Image>
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg">
@@ -93,8 +102,8 @@ function Footer() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-github h-5 w-5"
                     >
@@ -110,8 +119,8 @@ function Footer() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                     className="lucide lucide-arrow-up-right w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1"
                   >
@@ -135,8 +144,8 @@ function Footer() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-linkedin h-5 w-5"
                     >
@@ -153,8 +162,8 @@ function Footer() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                     className="lucide lucide-arrow-up-right w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1"
                   >
@@ -178,8 +187,8 @@ function Footer() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-mail h-5 w-5"
                     >
@@ -195,8 +204,8 @@ function Footer() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                     className="lucide lucide-arrow-up-right w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1"
                   >

@@ -11,7 +11,7 @@ function NavBar() {
     >
       <div className="max-w-350 mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-24">
-          <div className="flex-shrink-0 cursor-pointer group">
+          <div className="shrink-0 cursor-pointer group">
             <div className="w-12 h-12 bg-primary flex items-center justify-center shadow-lg shadow-primary/20 transition-transform group-hover:scale-105 rounded-lg">
               <span className="text-2xl font-bold text-white">F.</span>
             </div>
@@ -66,7 +66,7 @@ function NavBar() {
               className="relative px-8 py-3 bg-primary/80 backdrop-blur-xl text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-lg border border-white/10 shadow-[0_0_20px_rgba(255,90,60,0.4)] hover:bg-primary hover:shadow-[0_0_30px_rgba(255,90,60,0.6)] hover:-translate-y-0.5 overflow-hidden group"
             >
               <span className="relative z-10">Contact Me</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Link>
           </div>
           <div className="flex lg:hidden">
