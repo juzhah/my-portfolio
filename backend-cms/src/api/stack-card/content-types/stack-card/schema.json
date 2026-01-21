@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "stack_cards",
+  "info": {
+    "singularName": "stack-card",
+    "pluralName": "stack-cards",
+    "displayName": "StackCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imageCards": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

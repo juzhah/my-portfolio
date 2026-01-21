@@ -34,6 +34,15 @@ export interface ComponentOverview extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentStackCards extends Struct.ComponentSchema {
+  collectionName: 'components_component_stack_cards';
+  info: {
+    displayName: 'stack-cards';
+    icon: 'apps';
+  };
+  attributes: {};
+}
+
 export interface SharedTag extends Struct.ComponentSchema {
   collectionName: 'components_shared_tags';
   info: {
@@ -53,6 +62,7 @@ declare module '@strapi/strapi' {
       'component.challenge-solution': ComponentChallengeSolution;
       'component.key-features': ComponentKeyFeatures;
       'component.overview': ComponentOverview;
+      'component.stack-cards': ComponentStackCards;
       'shared.tag': SharedTag;
     }
   }

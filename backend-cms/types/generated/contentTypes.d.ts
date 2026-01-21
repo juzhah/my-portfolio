@@ -471,6 +471,34 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStackCardStackCard extends Struct.SingleTypeSchema {
+  collectionName: 'stack_cards';
+  info: {
+    displayName: 'StackCard';
+    pluralName: 'stack-cards';
+    singularName: 'stack-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageCards: Schema.Attribute.Media<'images' | 'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stack-card.stack-card'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStackStack extends Struct.CollectionTypeSchema {
   collectionName: 'stacks';
   info: {
@@ -1064,6 +1092,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::project.project': ApiProjectProject;
+      'api::stack-card.stack-card': ApiStackCardStackCard;
       'api::stack.stack': ApiStackStack;
       'api::tag.tag': ApiTagTag;
       'api::tool.tool': ApiToolTool;
