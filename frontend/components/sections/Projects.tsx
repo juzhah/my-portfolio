@@ -34,14 +34,26 @@ async function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  const imageUrl =
+    project.cover?.url ||
+    "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop";
+
   return (
     <Link href={`projects/${project.slug}`}>
       <div className="group cursor-pointer">
         <div className="relative h-100 overflow-hidden mb-6 bg-dark-card rounded-lg border border-white/5">
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
+
+          {/* Status Badge */}
+          {project.status === "in_development" && (
+            <div className="absolute top-4 left-4 z-30 bg-yellow-500/20 backdrop-blur-md border border-yellow-500/50 text-yellow-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              In Development
+            </div>
+          )}
+
           <Image
-            src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
-            alt="Farming Management System"
+            src={imageUrl}
+            alt={project.cover?.alternativeText || project.title}
             width="600"
             height="400"
             loading="lazy"
@@ -62,7 +74,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="flex justify-between items-start h-full">
           <div className="flex flex-col">
             <span className="text-primary text-xs font-bold uppercase tracking-wider mb-2 block">
-              Product
+              {project.tag || "Product"}
             </span>
             <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
               {project.title}

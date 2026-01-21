@@ -3,8 +3,8 @@
 [✅] replace al html svg elements with react elements
 [_] add animated background (morphing squares)
 [_] create professional experience collection in cms
-[_] CREATE FOOTER
-[_] CREATE NAVBAR
+[✅] CREATE FOOTER
+[✅] CREATE NAVBAR
 [_] create certificates collection
 [_] create certificates section UI
 
@@ -19,16 +19,16 @@
 
 ### About Section
 
-[_] enhance about section
-[_]fix about stack images bug on mobile
+[✅] enhance about section
 [✅]fix about card sticky bug on mobile
-[_] use real images for image stack
+[✅]fix about card sticky bug on mobile
+[✅] use real images for image stack
 
 ### Hero Section
 
-[_] add more animations to Hero (name title, open to words loop)
-[_] add formal picture for hero
-[_] change pfp frame
+[✅] add more animations to Hero (name title, open to words loop)
+[✅] add formal picture for hero
+[✅] change pfp frame
 [✅] fix download cv bg color on hover
 
 ### Projects section

@@ -1,3 +1,6 @@
+import Navbar from "@/components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
+import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans } from "next/font/google";
 import "./globals.css";
@@ -29,7 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark `}
       >
-        {children}
+        <AnimatedBackground />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

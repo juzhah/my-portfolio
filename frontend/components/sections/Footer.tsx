@@ -9,18 +9,20 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 bg-primary flex items-center justify-center mr-3 shadow-lg shadow-primary/20">
-                <span className="text-xl font-bold text-white">F.</span>
+                <span className="text-xl font-bold text-white">L.</span>
               </div>
               <div>
-                <h3 className="text-white font-bold text-lg">Fahim Montasir</h3>
+                <h3 className="text-white font-bold text-lg">
+                  J. Esteban Lozada
+                </h3>
                 <p className="text-gray-500 text-xs uppercase tracking-wider">
-                  Technical Product Manager
+                  Software Developer
                 </p>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-8">
               Building scalable digital products and data-driven strategies for
-              global markets. Based in Dhaka, working with the world.
+              global markets. Based in Bogota, working with the world.
             </p>
             <div className="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
               <svg
@@ -120,7 +122,7 @@ function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="https://github.com/FahimMIST"
+                  href="https://github.com/juzhah"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-white transition-colors text-sm flex items-center justify-between group"
@@ -162,7 +164,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://www.linkedin.com/in/fahim-sium/"
+                  href="https://www.linkedin.com/in/juan-lozada/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-white transition-colors text-sm flex items-center justify-between group"
@@ -203,7 +205,7 @@ function Footer() {
                   </svg>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="https://www.facebook.com/fahim.montasir.181694"
                   target="_blank"
@@ -243,10 +245,10 @@ function Footer() {
                     <path d="M7 17 17 7"></path>
                   </svg>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
-                  href="mailto:notetofahim@gmail.com"
+                  href="mailto:estebanlozadah@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-white transition-colors text-sm flex items-center justify-between group"
@@ -286,7 +288,7 @@ function Footer() {
                   </svg>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="https://www.datacamp.com/portfolio/FahimMontasir"
                   target="_blank"
@@ -372,13 +374,13 @@ function Footer() {
                     <path d="M7 17 17 7"></path>
                   </svg>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-600 text-xs">
-            © 2026 Fahim Montasir. All rights reserved.
+            © 2026 J. Esteban Lozada. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-xs text-gray-600">
             <span>Privacy Policy</span>

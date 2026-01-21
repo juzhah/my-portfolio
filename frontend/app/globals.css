@@ -83,6 +83,15 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 .dark {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
@@ -117,11 +126,29 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
   }
-  body {
-    @apply bg-background text-foreground;
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
   }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }

@@ -5,14 +5,19 @@ import Link from "next/link";
 
 async function ProjectContent({ project }: { project: Project }) {
   const { title, description } = project;
+  const imageUrl =
+    project.cover?.url ||
+    "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop";
 
   return (
     <div className="min-h-screen bg-dark-bg">
       <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-dark-bg/50 to-transparent z-10"></div>
         <Image
-          src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"
-          alt="Fresh Buying &amp; Distribution Network"
+          src={imageUrl}
+          alt={project.cover?.alternativeText || title}
+          width={1200}
+          height={600}
           className="w-full h-full object-cover"
         />
         <div className="absolute top-28 left-0 w-full z-20 px-6 lg:px-12">
@@ -31,11 +36,13 @@ async function ProjectContent({ project }: { project: Project }) {
         <div className="bg-dark-card border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl mb-12 flex flex-col md:flex-row justify-between gap-8 items-start">
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-4">
+              {project.status === "in_development" && (
+                <span className="px-3 py-1 bg-yellow-500/10 text-yellow-500 text-xs font-bold uppercase tracking-wider rounded border border-yellow-500/20">
+                  In Development
+                </span>
+              )}
               <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded border border-primary/20">
-                Operations
-              </span>
-              <span className="px-3 py-1 bg-white/5 text-gray-300 text-xs font-bold uppercase tracking-wider rounded border border-white/10">
-                Operational Strategist &amp; PM
+                {project.tag || "Product"}
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-black text-white mb-4">

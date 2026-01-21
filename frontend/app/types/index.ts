@@ -4,6 +4,12 @@ export interface Project {
   title: string;
   slug: string;
   description: string;
+  tag?: string;
+  status?: "in_development" | "completed";
+  cover?: {
+    url: string;
+    alternativeText?: string;
+  };
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date;
