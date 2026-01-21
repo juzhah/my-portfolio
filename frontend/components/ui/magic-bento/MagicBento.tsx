@@ -56,21 +56,14 @@ const MagicBento: React.FC<BentoProps> = (props) => {
           }
           
           .card-responsive {
-            grid-template-columns: 1fr;
             width: 100%;
             margin: 0 auto;
-            padding: 0.5rem;
           }
           
-          @media (min-width: 600px) {
-            .card-responsive {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-          
+
+        
           @media (min-width: 1024px) {
             .card-responsive {
-              grid-template-columns: repeat(4, 1fr);
             }
 
             .card-responsive .card:nth-child(2) {
@@ -152,10 +145,7 @@ const MagicBento: React.FC<BentoProps> = (props) => {
           
           @media (max-width: 599px) {
             .card-responsive {
-              grid-template-columns: 1fr;
-              width: 90%;
-              margin: 0 auto;
-              padding: 0.5rem;
+              width: 100%;
             }
             
             .card-responsive .card {
@@ -178,7 +168,7 @@ const MagicBento: React.FC<BentoProps> = (props) => {
         {/* Heading | First Grid element */}
         <div
           className={
-            "col-span-2 card flex flex-col relative w-full max-w-full p-8 rounded-4xl  font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
+            "sm:col-span-2  card flex flex-col justify-center relative w-full max-w-full lg:p-8 md:rounded-4xl font-light lg:overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
           }
           ref={headerRef}
         >
@@ -199,19 +189,19 @@ const MagicBento: React.FC<BentoProps> = (props) => {
             <BentoCards
               stacksList={stacks.filter(
                 (stack) =>
-                  stack.stackId === "front-end" || stack.stackId === "back-end",
+                  stack.stackId === "front-end" || stack.stackId === "back-end"
               )}
               {...props}
             />
             <BentoCards
               stacksList={stacks.filter(
-                (stack) => stack.stackId === "tools-and-dev-ops",
+                (stack) => stack.stackId === "tools-and-dev-ops"
               )}
               {...props}
             />
             <BentoCards
               stacksList={stacks.filter(
-                (stack) => stack.stackId === "programming-languages",
+                (stack) => stack.stackId === "programming-languages"
               )}
               {...props}
             />
@@ -221,7 +211,7 @@ const MagicBento: React.FC<BentoProps> = (props) => {
         {/* Last Card Grid element*/}
         <div
           className={
-            "col-span-2 flex flex-col justify-between relative w-full max-w-full pt-8 lg:pl-8 rounded-4xl  font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
+            "lg:col-span-2 px-8 lg:px-0 flex flex-col justify-between relative w-full max-w-full lg:pt-8 lg:pl-8 rounded-4xl  font-light lg:overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
           }
           ref={footerRef}
         >
@@ -229,46 +219,10 @@ const MagicBento: React.FC<BentoProps> = (props) => {
             <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mr-4">
               Other Skills
             </span>
-            {/* {lastCardData.map((toolSet, index) => {
-              return (
-                <div key={index}>
-                  <div className="card__header flex justify-between gap-3 relative text-white ">
-                    <span className="card__label text-base">
-                      {toolSet.label}
-                    </span>
-                  </div>
-                  <div className="card__content flex flex-col relative text-white">
-                    <h3
-                      className={`card__title font-normal text-base m-0 mb-1 ${
-                        textAutoHide ? "text-clamp-1" : ""
-                      }`}
-                    >
-                      {toolSet.title}
-                    </h3>
-                    <p
-                      className={`card__description text-xs leading-5 opacity-90 ${
-                        textAutoHide ? "text-clamp-2" : ""
-                      }`}
-                    >
-                      {toolSet.description}
-                    </p>
 
-                    <ul className="flex flex-wrap gap-2">
-                      {toolSet.tools?.map((tool, index) => (
-                        <li key={index}>
-                          <Badge variant={"secondary"}>
-                            {typeof tool === "string" ? tool : tool.name}
-                          </Badge>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              );
-            })} */}
             {(() => {
               const languageStack = stacks.find(
-                (stack) => stack.stackId === "languages",
+                (stack) => stack.stackId === "languages"
               );
               return languageStack ? (
                 <div className="py-10">
@@ -276,12 +230,6 @@ const MagicBento: React.FC<BentoProps> = (props) => {
                 </div>
               ) : null;
             })()}
-          </div>
-          <div className="mx-auto w-fit inline-flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
-              Continuously Learning New Standards
-            </span>
           </div>
         </div>
       </BentoCardGrid>

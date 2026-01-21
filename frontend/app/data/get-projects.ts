@@ -2,7 +2,7 @@ import { EnvConfig } from "@/lib/utils";
 import { Project } from "../types";
 
 export async function getProjects(): Promise<Project[]> {
-  const res = await fetch("http://localhost:1337/api/projects", {
+  const res = await fetch(`${EnvConfig().strapi_url}/api/projects`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
@@ -27,14 +27,14 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getProject(slug: string): Promise<Project> {
   const res = await fetch(
-    `http://localhost:1337/api/projects?filters[slug][$eq]=${slug}`,
+    `${EnvConfig().strapi_url}/api/projects?filters[slug][$eq]=${slug}`,
     {
       method: "GET",
       headers: {
         Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
         "Content-Type": "application/json",
       },
-    },
+    }
   );
 
   if (!res.ok) {

@@ -1,16 +1,15 @@
-import { ArrowDownToLine, Github } from "lucide-react";
+import { ArrowDownToLine } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import AnimatedContent from "../ui/animate-section/AnimateSection";
 import RotatingText from "../ui/rotating-text/RotatingText";
-import MeInJapan from "@/assets/me-in-japan.jpg";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center pt-32 lg:pt-20 pb-12 overflow-hidden"
+      className=" relative min-h-screen flex flex-col justify-center pt-32 lg:pt-20 pb-12 overflow-hidden"
     >
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
       <div className="absolute bottom-0 right-0 w-125 h-125 bg-accent-teal/5 rounded-full blur-[120px]"></div>

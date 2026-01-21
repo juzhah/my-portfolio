@@ -2,13 +2,16 @@ import { EnvConfig } from "@/lib/utils";
 import { Stack } from "../types";
 
 export async function getStacks(): Promise<Stack[]> {
-  const res = await fetch("http://localhost:1337/api/stacks?populate=tools", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
-      "Content-Type": "application/json",
-    },
-  });
+  const res = await fetch(
+    `${EnvConfig().strapi_url}/api/stacks?populate=tools`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   if (!res.ok) {
     // This will trigger the closest error.js boundary

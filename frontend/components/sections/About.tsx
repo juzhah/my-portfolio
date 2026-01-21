@@ -15,7 +15,7 @@ async function About() {
     <section id="about" className="py-32 relative">
       <div className="max-w-350 mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div className="sticky top-32 bg-[var(--card-surface)]">
+          <div className="lg:sticky top-32 bg-[var(--card-surface)]">
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
             <div className=" bg-dark-card border border-white/5 p-8 rounded-2xl overflow-hidden group">
               {/* ABOUT CARD */}

@@ -10,7 +10,7 @@
 
 ### MagicBento
 
-[_]fix MagicBento layout bug on mobile
+[✅]fix MagicBento layout bug on mobile
 [✅] fix bento cards ui
 [✅] fix bento grid spotlight
 [✅] fix MagiBento color
@@ -21,7 +21,8 @@
 
 [_] enhance about section
 [_]fix about stack images bug on mobile
-[_]fix about card sticky bug on mobile
+[✅]fix about card sticky bug on mobile
+[_] use real images for image stack
 
 ### Hero Section
 
