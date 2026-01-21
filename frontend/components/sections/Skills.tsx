@@ -5,7 +5,7 @@ import { getStacks } from "@/app/data/get-skills";
 async function Skills() {
   const stacks = await getStacks();
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="skills" className="py-32 relative overflow-hidden">
       <div className="max-w-350 mx-auto px-6 lg:px-12">
         <Suspense>
           <MagicBento
