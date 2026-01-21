@@ -11,6 +11,16 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "project_status": {
+      "type": "enumeration",
+      "required": false,
+      "default": "development",
+      "enum": [
+        "development",
+        "finished",
+        "planning"
+      ]
+    },
     "title": {
       "type": "string"
     },
@@ -38,6 +48,11 @@
       "target": "api::tag.tag",
       "inversedBy": "projects"
     },
+    "tools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tool.tool"
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
@@ -45,11 +60,6 @@
         "component.challenge-solution",
         "component.key-features"
       ]
-    },
-    "tools": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tool.tool"
     }
   }
 }

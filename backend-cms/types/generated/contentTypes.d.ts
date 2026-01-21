@@ -459,6 +459,10 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
+    project_status: Schema.Attribute.Enumeration<
+      ['development', 'finished', 'planning']
+    > &
+      Schema.Attribute.DefaultTo<'development'>;
     project_tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
