@@ -24,7 +24,7 @@ async function About() {
             <div className=" bg-dark-card border border-white/5 p-8 rounded-2xl overflow-hidden group">
               {/* ABOUT CARD */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-                <div className="col-span-1 relative h-64 md:h-auto min-h-[250px] w-full -ml-6">
+                <div className="col-span-1 relative h-64 md:h-auto min-h-62.5 w-full -ml-6">
                   <Suspense>
                     <Stack
                       randomRotation
@@ -145,7 +145,7 @@ async function About() {
               <div className="relative border-l border-white/10 ml-3 space-y-12 pb-4">
                 {/* Job 1 */}
                 <div className="pl-8 relative group">
-                  <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-gray-700 group-hover:bg-primary transition-colors border border-dark-bg"></div>
+                  <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-gray-700 group-hover:bg-primary transition-colors border border-dark-bg"></div>
                   <div className="w-full inline-flex flex-col sm:flex-row sm:items-center justify-between text-xl font-bold text-primary hover:text-white transition-colors group mb-4">
                     <p className="transition-colors">
                       Freelance Software Developer | Self-Employed
@@ -170,7 +170,7 @@ async function About() {
 
                 {/* Job 2 */}
                 <div className="pl-8 relative group">
-                  <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-gray-700 group-hover:bg-primary transition-colors border border-dark-bg"></div>
+                  <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-gray-700 group-hover:bg-primary transition-colors border border-dark-bg"></div>
                   <div className="w-full inline-flex flex-col sm:flex-row sm:items-center justify-between text-xl font-bold text-primary hover:text-white transition-colors group mb-4">
                     <p className="transition-colors">
                       Jr Software Developer | Minusjobs
@@ -195,7 +195,7 @@ async function About() {
 
                 {/* Job 3 */}
                 <div className="pl-8 relative group">
-                  <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-gray-700 group-hover:bg-primary transition-colors border border-dark-bg"></div>
+                  <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-gray-700 group-hover:bg-primary transition-colors border border-dark-bg"></div>
                   <div className="w-full inline-flex flex-col sm:flex-row sm:items-center justify-between text-xl font-bold text-primary hover:text-white transition-colors group mb-4">
                     <p className="transition-colors">
                       Flight Attendant | Copa Airlines
