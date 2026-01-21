@@ -1,13 +1,16 @@
 import { Project } from "@/app/types";
+import { EnvConfig } from "@/lib/utils";
 import { CheckCheck, ChevronLeft, Info, Target, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import DEFAULT_IMAGE from "@/assets/project-default-large.webp";
 
 async function ProjectContent({ project }: { project: Project }) {
-  const { title, description } = project;
-  const imageUrl =
-    project.cover?.url ||
-    "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1000&auto=format&fit=crop";
+  const { title, description, cover, type, status } = project;
+
+  const imageUrl = cover
+    ? EnvConfig().strapi_url + cover?.formats?.large.url
+    : DEFAULT_IMAGE;
 
   return (
     <div className="min-h-screen bg-dark-bg">
@@ -36,13 +39,13 @@ async function ProjectContent({ project }: { project: Project }) {
         <div className="bg-dark-card border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl mb-12 flex flex-col md:flex-row justify-between gap-8 items-start">
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              {project.status === "in_development" && (
+              {status === "in_development" && (
                 <span className="px-3 py-1 bg-yellow-500/10 text-yellow-500 text-xs font-bold uppercase tracking-wider rounded border border-yellow-500/20">
                   In Development
                 </span>
               )}
               <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded border border-primary/20">
-                {project.tag || "Product"}
+                {type || "Product"}
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-black text-white mb-4">

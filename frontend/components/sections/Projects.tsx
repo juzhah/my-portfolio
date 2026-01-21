@@ -1,9 +1,11 @@
 "use server";
 import { getProjects } from "@/app/data/get-projects";
 import { Project } from "@/app/types";
+import { EnvConfig } from "@/lib/utils";
 import { ArrowUpRight, NotebookText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import DEFAULT_IMAGE from "@/assets/project-default.webp";
 
 async function Projects() {
   const projects = await getProjects();
@@ -34,26 +36,28 @@ async function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const imageUrl =
-    project.cover?.url ||
-    "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop";
+  const { title, description, cover, type, projectStatus, slug } = project;
+
+  const imageUrl = cover
+    ? EnvConfig().strapi_url + cover?.formats?.large.url
+    : DEFAULT_IMAGE;
 
   return (
-    <Link href={`projects/${project.slug}`}>
+    <Link href={`projects/${slug}`}>
       <div className="group cursor-pointer">
         <div className="relative h-100 overflow-hidden mb-6 bg-dark-card rounded-lg border border-white/5">
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
 
           {/* Status Badge */}
-          {project.status === "in_development" && (
-            <div className="absolute top-4 left-4 z-30 bg-yellow-500/20 backdrop-blur-md border border-yellow-500/50 text-yellow-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          {projectStatus === "development" && (
+            <div className="absolute top-4 left-4 z-30 bg-primary/20 backdrop-blur-md border border-primary/50 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               In Development
             </div>
           )}
 
           <Image
             src={imageUrl}
-            alt={project.cover?.alternativeText || project.title}
+            alt={cover?.alternativeText || title}
             width="600"
             height="400"
             loading="lazy"
@@ -74,13 +78,13 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="flex justify-between items-start h-full">
           <div className="flex flex-col">
             <span className="text-primary text-xs font-bold uppercase tracking-wider mb-2 block">
-              {project.tag || "Product"}
+              {type || "Product"}
             </span>
             <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
-              {project.title}
+              {title}
             </h3>
             <p className="text-gray-500 text-sm mt-2 line-clamp-2 overflow-hidden group-hover:text-gray-400 transition-colors leading-relaxed min-h-[2.8em]">
-              {project.description}
+              {description}
             </p>
           </div>
         </div>

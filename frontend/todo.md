@@ -23,6 +23,7 @@
 [✅]fix about card sticky bug on mobile
 [✅]fix about card sticky bug on mobile
 [✅] use real images for image stack
+[_] gather images for about section
 
 ### Hero Section
 
@@ -35,7 +36,6 @@
 
 [_] modify projects section
 [_] add "In Development" badge to projec collection and UI for its card and page
-[_] fix main tag in project card
-[_] fix cover image in project card
+[✅] fix main tag in project card
+[✅] fix cover image in project card
 [_] gather images for projects
-[_] gather images for about section

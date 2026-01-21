@@ -2,13 +2,16 @@ import { EnvConfig } from "@/lib/utils";
 import { Project } from "../types";
 
 export async function getProjects(): Promise<Project[]> {
-  const res = await fetch(`${EnvConfig().strapi_url}/api/projects`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
-      "Content-Type": "application/json",
-    },
-  });
+  const res = await fetch(
+    `${EnvConfig().strapi_url}/api/projects?populate=cover`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   if (!res.ok) {
     // This will trigger the closest error.js boundary
@@ -27,7 +30,9 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getProject(slug: string): Promise<Project> {
   const res = await fetch(
-    `${EnvConfig().strapi_url}/api/projects?filters[slug][$eq]=${slug}`,
+    `${
+      EnvConfig().strapi_url
+    }/api/projects?filters[slug][$eq]=${slug}&populate=cover`,
     {
       method: "GET",
       headers: {

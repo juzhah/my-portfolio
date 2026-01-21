@@ -31,7 +31,6 @@ async function About() {
                       autoplay
                       pauseOnHover
                       cards={cards.map((card, idx) => {
-                        console.log(card);
                         return (
                           <Image
                             src={
