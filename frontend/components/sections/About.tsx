@@ -31,11 +31,15 @@ async function About() {
                       autoplay
                       pauseOnHover
                       cards={cards.map((card, idx) => {
+                        const url =
+                          EnvConfig().node_env === "production"
+                            ? card.formats.large.url
+                            : EnvConfig().strapi_url + card.formats.large.url;
+
+                        console.log(url);
                         return (
                           <Image
-                            src={
-                              EnvConfig().strapi_url + card.formats.large.url
-                            }
+                            src={url}
                             key={idx}
                             alt={card.alternativeText}
                             width={208}

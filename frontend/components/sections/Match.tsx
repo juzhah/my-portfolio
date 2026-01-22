@@ -18,7 +18,7 @@ function Match() {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               className="lucide lucide-sparkles w-3 h-3"
             >
               <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
@@ -51,7 +51,7 @@ function Match() {
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                   className="lucide lucide-briefcase w-4 h-4 text-gray-500"
                 >
                   <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
@@ -76,7 +76,7 @@ function Match() {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     className="lucide lucide-rotate-ccw w-3 h-3"
                   >
                     <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
@@ -98,7 +98,7 @@ function Match() {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     className="lucide lucide-arrow-right w-4 h-4"
                   >
                     <path d="M5 12h14"></path>
@@ -119,7 +119,7 @@ function Match() {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 className="lucide lucide-scan-search w-16 h-16 text-gray-500 mb-6"
               >
                 <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
