@@ -61,7 +61,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/#contact"
             className="px-5 py-2 text-sm font-bold text-white bg-primary/20 border border-primary/20 rounded-lg hover:bg-primary hover:border-primary transition-all uppercase tracking-widest"
           >
             Contact

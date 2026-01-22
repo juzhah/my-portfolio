@@ -19,7 +19,6 @@ export async function getStackImages(): Promise<any[]> {
 
   const { data: stackCard } = await res.json();
   const cards = stackCard.imageCards;
-  console.log(cards);
 
   /* Process blocking error if no projects to show bcz why have a portfolio with no projects? xd */
   if (!cards || cards.lenght < 1) {

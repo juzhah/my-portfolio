@@ -1,4 +1,5 @@
 import About from "@/components/sections/About";
+import ContactSection from "@/components/sections/ContactSection";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
@@ -11,6 +12,7 @@ export default function Page() {
       <Skills />
       <About />
       <Projects />
+      <ContactSection />
       {/* <Match /> */}
     </>
   );

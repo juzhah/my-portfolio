@@ -126,7 +126,7 @@ async function About() {
               </div>
             </div>
             <div className="flex items-center gap-4 mb-12 bg-white/5 p-6 rounded-2xl border border-white/5 w-fit">
-              <span className="text-6xl font-bold text-primary">1+</span>
+              <span className="text-6xl font-bold text-primary">3+</span>
               <span className="text-white font-medium leading-tight">
                 Year Of <br />
                 Global Experience
@@ -218,7 +218,7 @@ async function About() {
                 </div>
               </div>
 
-              <div className="bg-white/5 p-8 border border-white/10 rounded-2xl relative overflow-hidden mt-8">
+              {/*  <div className="bg-white/5 p-8 border border-white/10 rounded-2xl relative overflow-hidden mt-8">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Professional Ethics &amp; Security
                 </h3>
@@ -243,7 +243,7 @@ async function About() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
