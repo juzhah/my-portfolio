@@ -112,13 +112,13 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/50 z-10 opacity-50 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <Image
                     src={
-                      "https://drive.google.com/uc?export=view&id=1YZ7YV5sAactX2quVdPJj6GG9DAogGjrG"
+                      "https://res.cloudinary.com/djrth1ax6/image/upload/a_90/a_hflip/large_profile_773e52975b.jpg"
                     }
-                    alt="Esteban Lozada standing confidently in professional attire, representing his role as a Technical Product Manager"
-                    width="500"
-                    height="600"
+                    alt="Esteban Lozada on his homeofice workspace, showing his work as a software developer"
+                    fill
+                    priority
+                    quality={100}
                     className="w-full h-full object-cover grayscale hover:filter-none transition-all duration-500 will-change-transform group-hover:scale-105"
-                    style={{ transform: "scaleX(-1)" }}
                   />
                 </div>
               </div>

@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { Cpu, Database, GraduationCap } from "lucide-react";
 import { getStackImages } from "@/app/data/get-image-stack";
 import { EnvConfig } from "@/lib/utils";
+import { mapStrapiImage } from "@/lib/map-strapi-image";
 const images = [
   "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format",
   "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format",
@@ -31,22 +32,21 @@ async function About() {
                       autoplay
                       pauseOnHover
                       cards={cards.map((card, idx) => {
-                        const url =
-                          EnvConfig().node_env === "production"
-                            ? card.formats.large.url
-                            : EnvConfig().strapi_url + card.formats.large.url;
+                        const image = mapStrapiImage({ image: card });
 
-                        console.log(url);
-                        return (
-                          <Image
-                            src={url}
-                            key={idx}
-                            alt={card.alternativeText}
-                            width={208}
-                            height={208}
-                            className="w-full h-full object-cover rounded-2xl "
-                          />
-                        );
+                        if (image) {
+                          return (
+                            <Image
+                              key={idx}
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              placeholder="blur"
+                              blurDataURL={`${image.src}?w=16&blur=20`}
+                              className="object-cover rounded-2xl "
+                            />
+                          );
+                        }
                       })}
                     />
                   </Suspense>

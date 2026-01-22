@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "prod-cms-e4509.estebanloz.dev",
+        hostname: "res.cloudinary.com",
         port: "",
         pathname: "/**",
       },
@@ -26,6 +26,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    formats: ["image/webp", "image/avif"],
   },
 };
 

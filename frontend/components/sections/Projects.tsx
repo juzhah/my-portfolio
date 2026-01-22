@@ -6,6 +6,7 @@ import { ArrowUpRight, NotebookText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import DEFAULT_IMAGE from "@/assets/project-default.webp";
+import { mapStrapiImage } from "@/lib/map-strapi-image";
 
 async function Projects() {
   const projects = await getProjects();
@@ -38,10 +39,7 @@ async function Projects() {
 function ProjectCard({ project }: { project: Project }) {
   const { title, description, cover, type, projectStatus, slug } = project;
 
-  const imageUrl = cover
-    ? EnvConfig().strapi_url + cover?.formats?.large.url
-    : DEFAULT_IMAGE;
-
+  const image = mapStrapiImage({ image: cover });
   return (
     <Link href={`projects/${slug}`}>
       <div className="group cursor-pointer">
@@ -56,10 +54,12 @@ function ProjectCard({ project }: { project: Project }) {
           )}
 
           <Image
-            src={imageUrl}
+            src={
+              image ??
+              "https://res.cloudinary.com/djrth1ax6/image/upload/large_project_placeholder.jpg"
+            }
             alt={cover?.alternativeText || title}
-            width="600"
-            height="400"
+            fill
             loading="lazy"
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 filter grayscale group-hover:grayscale-0"
           />

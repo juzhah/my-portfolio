@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 const {
   STRAPI_API_KEY: strapi_api_key = "development",
-  STRAPI_URL: strapi_url = "http://localhost:1337",
+  NEXT_PUBLIC_STRAPI_URL: strapi_url = "http://localhost:1337",
   NODE_ENV: node_env = "development",
 } = process.env;
 
