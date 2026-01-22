@@ -88,7 +88,7 @@ export default function ContactSection() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Call Me</h3>
               <p className="text-gray-400 text-sm mb-4">
-                Mon-Fri from 8am to 5pm
+                Or send me a WhatsApp message
               </p>
               <p className="text-white font-medium">+507 6309-9430</p>
             </div>
