@@ -91,7 +91,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact" // Assuming there is a contact page or section
+            href="/#contact" // Assuming there is a contact page or section
             className="text-lg font-medium text-primary"
             onClick={() => setIsOpen(false)}
           >

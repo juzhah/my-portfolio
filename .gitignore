@@ -33,3 +33,5 @@ next-env.d.ts
 # --- Logic/Monorepo Specifics ---
 # Ignore turbo or build caches if using Turborepo/Nx
 .turbo/
+
+**/.vercel

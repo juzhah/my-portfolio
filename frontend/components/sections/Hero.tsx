@@ -45,7 +45,7 @@ export default function Hero() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
-                  className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-500"
+                  className=" bg-clip-text bg-linear-to-r"
                 >
                   Lozada
                 </motion.span>
@@ -55,7 +55,7 @@ export default function Hero() {
                   transition={{ delay: 0.6, duration: 0.5 }}
                   className="text-primary animate-pulse"
                 >
-                  |
+                  .
                 </motion.span>
               </div>
             </motion.div>
@@ -117,6 +117,7 @@ export default function Hero() {
                     alt="Esteban Lozada on his homeofice workspace, showing his work as a software developer"
                     fill
                     priority
+                    fetchPriority="high"
                     quality={100}
                     className="w-full h-full object-cover grayscale hover:filter-none transition-all duration-500 will-change-transform group-hover:scale-105"
                   />

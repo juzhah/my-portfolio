@@ -66,9 +66,10 @@ function ProjectCard({ project }: { project: Project }) {
             <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
               <NotebookText />
             </div>
-            <span className="text-white font-bold mt-4 tracking-widest text-sm uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
+            {/* <span className="text-white font-bold mt-4 tracking-widest text-sm uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
               View Case Study
-            </span>
+            </span> */}
+            <p className="px-4 mt-4 text-justify">{description}</p>
           </div>
           <div className="absolute top-0 right-0 bg-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
             <ArrowUpRight />
