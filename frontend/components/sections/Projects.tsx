@@ -35,7 +35,7 @@ async function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const { title, description, cover, type, projectStatus } = project;
+  const { title, description, cover, type, project_status } = project;
 
   const image = mapStrapiImage({ image: cover });
 
@@ -46,8 +46,8 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
 
           {/* Status Badge */}
-          {projectStatus === "development" && (
-            <div className="absolute top-4 left-4 z-30 bg-primary/20 backdrop-blur-md border border-primary/50 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          {project_status === "development" && (
+            <div className="absolute bottom-4 right-4 z-30 bg-primary/20 backdrop-blur-md border border-primary text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               In Development
             </div>
           )}

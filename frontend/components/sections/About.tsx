@@ -147,7 +147,7 @@ async function About() {
                       Freelance Software Developer | Self-Employed
                     </p>
                     <span className="text-gray-500 text-sm bg-white/5 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">
-                      2025 - Current
+                      2025 - Now
                     </span>
                   </div>
 

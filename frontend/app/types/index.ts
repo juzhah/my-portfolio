@@ -5,7 +5,7 @@ export interface Project {
   slug: string;
   description: string;
   type?: string;
-  projectStatus: string;
+  project_status: string;
   status?: "in_development" | "completed";
   cover?: StrapiImage;
   createdAt: Date;
