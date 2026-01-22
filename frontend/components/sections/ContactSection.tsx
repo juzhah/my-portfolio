@@ -31,11 +31,11 @@ export default function ContactSection() {
               Get in Touch
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Let's Build Something <br />
+              Let&apos;s Build Something <br />
               <span className="text-gray-500">Amazing Together</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
-              Am I a good fit for your team or have a project in mind? I'm
+              Am I a good fit for your team or have a project in mind? I&apos;m
               always open to discussing new projects or opportunities to be part
               of your visions.
             </p>

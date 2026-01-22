@@ -1,6 +1,7 @@
 import { EnvConfig } from "@/lib/utils";
+import { StrapiImage } from "../types";
 
-export async function getStackImages(): Promise<any[]> {
+export async function getStackImages(): Promise<StrapiImage[]> {
   const res = await fetch(
     `${EnvConfig().strapi_url}/api/stack-card?populate=imageCards`,
     {

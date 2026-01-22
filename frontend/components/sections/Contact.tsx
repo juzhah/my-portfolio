@@ -55,7 +55,7 @@ async function Contact() {
               </div>
             </div>
           </div>
-          <div className="bg-dark-card p-10 border border-white/5 relative min-h-[400px] flex flex-col justify-center overflow-hidden shadow-2xl">
+          <div className="bg-dark-card p-10 border border-white/5 relative min-h-100 flex flex-col justify-center overflow-hidden shadow-2xl">
             <form className="space-y-6 transition-all duration-300 opacity-100">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">

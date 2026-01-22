@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
 
   images: {
     dangerouslyAllowLocalIP: true,
+    qualities: [100, 75],
     remotePatterns: [
       {
         protocol: "https",

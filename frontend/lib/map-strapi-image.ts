@@ -1,8 +1,9 @@
-import { EnvConfig } from "./utils";
+import { StrapiImage } from "@/app/types";
 
-const STRAPI_URL = EnvConfig().strapi_url;
-
-type MapStrapiImage = any;
+interface MapStrapiImage {
+  image?: StrapiImage;
+  preferredFormat?: "large" | "medium" | "thumbnail";
+}
 
 export function mapStrapiImage({
   image,

@@ -7,7 +7,7 @@ export interface Project {
   type?: string;
   projectStatus: string;
   status?: "in_development" | "completed";
-  cover?: any;
+  cover?: StrapiImage;
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date;
@@ -50,4 +50,52 @@ export interface Pagination {
   pageSize: number;
   pageCount: number;
   total: number;
+}
+
+export interface StrapiImage {
+  id: number;
+  documentId: string;
+  name: string;
+  alternativeText: string;
+  caption: null;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: null;
+  provider: string;
+  provider_metadata: ProviderMetadata;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt: Date;
+}
+
+export interface Formats {
+  large: Large;
+  small: Large;
+  medium: Large;
+  thumbnail: Large;
+}
+
+export interface Large {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path: null;
+  size: number;
+  width: number;
+  height: number;
+  sizeInBytes: number;
+  provider_metadata: ProviderMetadata;
+}
+
+export interface ProviderMetadata {
+  public_id: string;
+  resource_type: string;
 }
