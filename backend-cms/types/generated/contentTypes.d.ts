@@ -430,6 +430,42 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
+  collectionName: 'project_posts';
+  info: {
+    displayName: 'ProjectPost';
+    pluralName: 'project-posts';
+    singularName: 'project-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'post-components.heading',
+        'post-components.paragraph',
+        'post-components.icon-list',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-post.project-post'
+    > &
+      Schema.Attribute.Private;
+    project: Schema.Attribute.Relation<'oneToOne', 'api::project.project'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -459,6 +495,10 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
+    project_post: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::project-post.project-post'
+    >;
     project_status: Schema.Attribute.Enumeration<
       ['development', 'finished', 'planning']
     > &
@@ -848,6 +888,7 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ext: Schema.Attribute.String;
+    focalPoint: Schema.Attribute.JSON;
     folder: Schema.Attribute.Relation<'manyToOne', 'plugin::upload.folder'> &
       Schema.Attribute.Private;
     folderPath: Schema.Attribute.String &
@@ -1095,6 +1136,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::project-post.project-post': ApiProjectPostProjectPost;
       'api::project.project': ApiProjectProject;
       'api::stack-card.stack-card': ApiStackCardStackCard;
       'api::stack.stack': ApiStackStack;

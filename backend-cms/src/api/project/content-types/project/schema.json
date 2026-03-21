@@ -60,6 +60,12 @@
         "component.challenge-solution",
         "component.key-features"
       ]
+    },
+    "project_post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-post.project-post",
+      "mappedBy": "project"
     }
   }
 }

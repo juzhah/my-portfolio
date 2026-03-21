@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_icon_list_items",
+  "info": {
+    "displayName": "icon-list-item",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

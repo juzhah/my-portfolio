@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_post_components_icon_lists",
+  "info": {
+    "displayName": "icon-list",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "iconListItem": {
+      "type": "component",
+      "component": "component.icon-list-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_post_components_paragraphs",
+  "info": {
+    "displayName": "paragraph",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

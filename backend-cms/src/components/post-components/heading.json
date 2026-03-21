@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_post_components_headings",
+  "info": {
+    "displayName": "heading",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
