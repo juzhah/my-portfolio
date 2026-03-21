@@ -62,7 +62,7 @@ export interface PostComponentsHeading extends Struct.ComponentSchema {
     icon: 'quote';
   };
   attributes: {
-    text: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -73,7 +73,34 @@ export interface PostComponentsIconList extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    iconListItem: Schema.Attribute.Component<'component.icon-list-item', true>;
+    iconListItem: Schema.Attribute.Component<'component.icon-list-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface PostComponentsMedia extends Struct.ComponentSchema {
+  collectionName: 'components_post_components_media';
+  info: {
+    displayName: 'media';
+    icon: 'landscape';
+  };
+  attributes: {
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface PostComponentsMetrics extends Struct.ComponentSchema {
+  collectionName: 'components_post_components_metrics';
+  info: {
+    displayName: 'metrics';
+    icon: 'dashboard';
+  };
+  attributes: {
+    metric_type: Schema.Attribute.Enumeration<['cards', 'seamless']> &
+      Schema.Attribute.Required;
+    metrics: Schema.Attribute.Component<'shared.metric', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -84,7 +111,19 @@ export interface PostComponentsParagraph extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
-    text: Schema.Attribute.RichText;
+    text: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedMetric extends Struct.ComponentSchema {
+  collectionName: 'components_shared_metrics';
+  info: {
+    displayName: 'metric';
+    icon: 'chartPie';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -111,7 +150,10 @@ declare module '@strapi/strapi' {
       'component.stack-cards': ComponentStackCards;
       'post-components.heading': PostComponentsHeading;
       'post-components.icon-list': PostComponentsIconList;
+      'post-components.media': PostComponentsMedia;
+      'post-components.metrics': PostComponentsMetrics;
       'post-components.paragraph': PostComponentsParagraph;
+      'shared.metric': SharedMetric;
       'shared.tag': SharedTag;
     }
   }

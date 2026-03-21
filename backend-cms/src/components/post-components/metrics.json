@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_post_components_metrics",
+  "info": {
+    "displayName": "metrics",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "metrics": {
+      "type": "component",
+      "component": "shared.metric",
+      "repeatable": true,
+      "required": true
+    },
+    "metric_type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "cards",
+        "seamless"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -441,11 +441,16 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    article_type: Schema.Attribute.Enumeration<
+      ['system_desing', 'product_showcase']
+    >;
     blocks: Schema.Attribute.DynamicZone<
       [
         'post-components.heading',
         'post-components.paragraph',
         'post-components.icon-list',
+        'post-components.metrics',
+        'post-components.media',
       ]
     > &
       Schema.Attribute.Required;

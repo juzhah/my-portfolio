@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_post_components_media",
+  "info": {
+    "displayName": "media",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

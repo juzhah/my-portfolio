@@ -11,6 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "article_type": {
+      "type": "enumeration",
+      "enum": [
+        "system_desing",
+        "product_showcase"
+      ]
+    },
     "project": {
       "type": "relation",
       "relation": "oneToOne",
@@ -22,7 +29,9 @@
       "components": [
         "post-components.heading",
         "post-components.paragraph",
-        "post-components.icon-list"
+        "post-components.icon-list",
+        "post-components.metrics",
+        "post-components.media"
       ],
       "required": true
     }
