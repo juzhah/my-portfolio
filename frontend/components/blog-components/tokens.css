@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Blog Component Design Tokens
+   --------------------------------------------------------------------------
+   Extends the base theme for project article / case study components.
+   Imported via globals.css alongside the Tailwind base.
+   ========================================================================== */
+
+/* --- Typography --------------------------------------------------------- */
+
+:root {
+  --blog-font-display:
+    var(--font-serif-display), "DM Serif Display", Georgia, serif;
+  --blog-font-mono: var(--font-dm-mono), "DM Mono", "Courier New", monospace;
+  --blog-font-ui: var(--font-syne), "Syne", system-ui, sans-serif;
+}
+
+/* --- Semantic Colors ---------------------------------------------------- */
+
+:root {
+  --blog-status-live: oklch(0.55 0.19 145);
+  --blog-status-progress: oklch(0.65 0.16 80);
+  --blog-status-archived: oklch(0.5 0.02 286);
+
+  --blog-challenge: oklch(0.58 0.2 25);
+  --blog-solution: oklch(0.55 0.18 155);
+}
+
+.dark {
+  --blog-status-live: oklch(0.75 0.17 145);
+  --blog-status-progress: oklch(0.82 0.14 80);
+  --blog-status-archived: oklch(0.6 0.02 286);
+
+  --blog-challenge: oklch(0.75 0.15 22);
+  --blog-solution: oklch(0.75 0.14 155);
+}
+
+/* --- Shared Utility Classes --------------------------------------------- */
+
+/* Tag badge — thin border with hover lift */
+.blog-tag {
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+.blog-tag:hover {
+  border-color: var(--muted-foreground);
+  color: var(--foreground);
+}
+
+/* Generic card — thin border with hover accent */
+.blog-card {
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.15s;
+}
+.blog-card:hover {
+  border-color: var(--muted-foreground);
+}
+.blog-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/*
+ * Cell grid — background-gap technique for clean dividers.
+ * Container background bleeds through the 0.5px gap between children,
+ * producing uniform divider lines regardless of wrapping.
+ */
+.blog-cell-grid {
+  display: grid;
+  gap: 0.5px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.blog-cell-grid > * {
+  background: var(--background);
+}
+
+/* Interactive stack card */
+.blog-stack-card {
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+}
+.blog-stack-card:hover {
+  border-color: var(--muted-foreground);
+}
+.blog-stack-card[data-active="true"] {
+  border-color: var(--foreground);
+  border-width: 1px;
+  background: var(--muted);
+}
+.blog-stack-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Accordion step divider */
+.blog-step-divider {
+  border: none;
+  border-bottom: 0.5px solid var(--border);
+  margin: 0;
+}

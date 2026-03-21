@@ -1,4 +1,5 @@
 import { StrapiImage } from "@/app/types";
+import { EnvConfig } from "./utils";
 
 interface MapStrapiImage {
   image?: StrapiImage;
@@ -14,8 +15,12 @@ export function mapStrapiImage({
   const { url, width, height, alternativeText, formats } = image;
   const format = formats?.[preferredFormat] || {};
 
+  const imageSrc =
+    EnvConfig().node_env === "development"
+      ? `${EnvConfig().strapi_url + format.url}`
+      : format.url;
   return {
-    src: `${format.url || url}`,
+    src: imageSrc,
     alt: alternativeText || "",
     width: format.width || width,
     height: format.height || height,

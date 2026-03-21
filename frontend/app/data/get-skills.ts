@@ -10,7 +10,7 @@ export async function getStacks(): Promise<Stack[]> {
         Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
         "Content-Type": "application/json",
       },
-    }
+    },
   );
 
   if (!res.ok) {

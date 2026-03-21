@@ -8,9 +8,18 @@ export interface Project {
   project_status: string;
   status?: "in_development" | "completed";
   cover?: StrapiImage;
+  tools: Tools[];
+  project_tags: ProjectTags[];
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date;
+}
+
+export interface Tools {
+  name: string;
+}
+export interface ProjectTags {
+  name: string;
 }
 
 export interface Stack {
@@ -98,4 +107,15 @@ export interface Large {
 export interface ProviderMetadata {
   public_id: string;
   resource_type: string;
+}
+
+export interface Block {
+  __component: string;
+  id: number;
+  [key: string]: unknown;
+}
+
+/* Block Components */
+export interface HeadingBlock extends Block {
+  title: string;
 }

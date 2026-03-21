@@ -35,12 +35,12 @@ async function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const { title, description, cover, type, project_status } = project;
+  const { title, description, cover, type, project_status, slug } = project;
 
   const image = mapStrapiImage({ image: cover });
 
   return (
-    <Link href={`#projects`}>
+    <Link href={`/projects/${slug}`}>
       <div className="group cursor-pointer">
         <div className="relative h-100 overflow-hidden mb-6 bg-dark-card rounded-lg border border-white/5">
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
@@ -69,7 +69,7 @@ function ProjectCard({ project }: { project: Project }) {
             {/* <span className="text-white font-bold mt-4 tracking-widest text-sm uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
               View Case Study
             </span> */}
-            <p className="px-4 mt-4 text-justify">{description}</p>
+            <p className="px-4 mt-4 text-justify">Read More</p>
           </div>
           <div className="absolute top-0 right-0 bg-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
             <ArrowUpRight />

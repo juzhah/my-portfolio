@@ -10,7 +10,7 @@ export async function getProjects(): Promise<Project[]> {
         Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
         "Content-Type": "application/json",
       },
-    }
+    },
   );
 
   if (!res.ok) {
@@ -32,14 +32,14 @@ export async function getProject(slug: string): Promise<Project> {
   const res = await fetch(
     `${
       EnvConfig().strapi_url
-    }/api/projects?filters[slug][$eq]=${slug}&populate=cover`,
+    }/api/projects?filters[slug][$eq]=${slug}&populate=cover&populate=tools&populate=project_tags`,
     {
       method: "GET",
       headers: {
         Authorization: `Bearer ${EnvConfig().strapi_api_key}`,
         "Content-Type": "application/json",
       },
-    }
+    },
   );
 
   if (!res.ok) {
@@ -54,5 +54,5 @@ export async function getProject(slug: string): Promise<Project> {
     throw new Error(`No projects to load into site`);
   }
 
-  return project;
+  return project[0];
 }
