@@ -26,6 +26,7 @@ next-env.d.ts
 # --- Environment Variables ---
 # Critical: Keep your secrets out of the repo
 .env
+.env.production
 .env.local
 .env.*.local
 *.env.bak
