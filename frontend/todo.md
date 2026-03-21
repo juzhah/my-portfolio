@@ -39,3 +39,8 @@
 [✅] fix main tag in project card
 [✅] fix cover image in project card
 [_] gather images for projects
+
+### Advices
+
+[_] Add GIFs to project info to showcase functionallity
+[_] Add dashboards, people like dashboards
