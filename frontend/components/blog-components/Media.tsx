@@ -1,6 +1,5 @@
 import { StrapiImage } from "@/app/types";
 import { mapStrapiImage } from "@/lib/map-strapi-image";
-import { div } from "motion/react-client";
 import Image from "next/image";
 
 export default function Media({ media }: { media: StrapiImage }) {

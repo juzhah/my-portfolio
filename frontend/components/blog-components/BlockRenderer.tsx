@@ -27,7 +27,7 @@ export function DynamicZone({ blocks }: DynamicZoneProps) {
         const { __component, id, ...props } = block;
 
         const componentKey = idx + id;
-        const BlockComponent = blockRegistry[block.__component];
+        const BlockComponent = blockRegistry[__component];
 
         if (!BlockComponent) {
           // Fail gracefully in prod, warn loudly in dev

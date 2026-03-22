@@ -3,7 +3,7 @@ import { EnvConfig } from "./utils";
 
 interface MapStrapiImage {
   image?: StrapiImage;
-  preferredFormat?: "large" | "medium" | "thumbnail";
+  preferredFormat?: "original" | "large" | "medium" | "thumbnail";
 }
 
 export function mapStrapiImage({
@@ -13,12 +13,23 @@ export function mapStrapiImage({
   if (!image) return null;
 
   const { url, width, height, alternativeText, formats } = image;
-  const format = formats?.[preferredFormat] || {};
 
+  if (preferredFormat === "original" || !formats?.[preferredFormat]) {
+    const imageSrc = url.startsWith("http")
+      ? url
+      : `${EnvConfig().strapi_url}${url}`;
+    return {
+      src: imageSrc,
+      alt: alternativeText || "",
+      width,
+      height,
+      formats,
+    };
+  }
+
+  const format = formats[preferredFormat];
   const imageSrc =
-    EnvConfig().node_env === "development"
-      ? `${EnvConfig().strapi_url + format.url}`
-      : format.url;
+    EnvConfig().node_env === "development" ? `${format.url}` : format.url;
   return {
     src: imageSrc,
     alt: alternativeText || "",

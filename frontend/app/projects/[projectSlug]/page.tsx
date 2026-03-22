@@ -17,8 +17,6 @@ export default async function ProjectPostPage({
 }) {
   const { projectSlug } = await params;
   const post = await getProjectPost(projectSlug);
-
-  console.log(post);
-
+  if (!post?.blocks?.length) return null;
   return <DynamicZone blocks={post.blocks} />;
 }

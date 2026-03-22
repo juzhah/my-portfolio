@@ -1,22 +1,14 @@
-import Link from "next/link";
-import Image from "next/image";
-import { mapStrapiImage } from "@/lib/map-strapi-image";
 import { Project } from "@/app/types";
+import { mapStrapiImage } from "@/lib/map-strapi-image";
+import Image from "next/image";
 
 type ProjectHeroProps = Pick<
   Project,
   "title" | "cover" | "description" | "status" | "project_tags" | "type"
 > &
   Partial<Project>;
-/* {
-  title: string;
-  tagline?: string;
-  status?: "live" | "in-progress" | "archived";
-  tags?: string[];
-  cover?: any;
-  ctaDemo?: { label: string; href: string };
-  ctaGithub?: { href: string };
-} */
+
+/* TODO: fix scrolled position bug when entering route for the first time */
 
 /* TODO: add actual status values */
 const statusConfig = {
@@ -42,11 +34,11 @@ export function ProjectHero({
     ? statusConfig[status]
     : { label: undefined, color: undefined };
   const titleLines = title.split("\n");
-  const image = mapStrapiImage({ image: cover });
+  const image = mapStrapiImage({ image: cover, preferredFormat: "large" });
 
   return (
     <header
-      className="relative w-full px-6 md:px-12 lg:px-24 pt-32 pb-16"
+      className="relative md:w-11/12 max-w-400 mx-auto px-6 md:px-12 lg:px-24 pt-32 pb-16 border rounded-b-4xl overflow-clip h-160"
       style={{ borderBottom: "0.5px solid var(--border)" }}
     >
       <div className="relative max-w-5xl mx-auto z-50">
@@ -96,7 +88,7 @@ export function ProjectHero({
           {project_tags?.map((tag) => (
             <span
               key={tag.name}
-              className="blog-tag text-[11px] tracking-[0.1em] uppercase px-3 py-1 text-muted-foreground"
+              className="blog-tag text-[11px] tracking-widest uppercase px-3 py-1 text-muted-foreground"
               style={{ fontFamily: "var(--blog-font-mono)" }}
             >
               {tag.name}
@@ -150,16 +142,18 @@ export function ProjectHero({
           )} */}
         </div>
       </div>
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 ">
+        {/* TODO: prerender image before reaching route view */}
         <Image
           src={
             image ??
-            "https://res.cloudinary.com/djrth1ax6/image/upload/large_project_placeholder.jpg"
+            "https://res.cloudinary.com/djrth1ax6/image/upload/v1774162097/oxa_roxa_G12979_Eg_Zc_unsplash_9f36395aba.jpg"
           }
           alt={cover?.alternativeText || title}
           fill
-          loading="lazy"
-          className="w-full h-full object-cover transform "
+          quality={100}
+          loading="eager"
+          className="h-full object-cover"
         />
         <div className="absolute inset-0 hero-gradient"></div>
       </div>

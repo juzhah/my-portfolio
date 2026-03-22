@@ -38,15 +38,14 @@
 
 /* Tag badge — thin border with hover lift */
 .blog-tag {
-  border: 0.5px solid var(--border);
+  border: 0.5px solid var(--color-primary);
   border-radius: 8px;
   transition:
     border-color 0.15s,
     color 0.15s;
 }
 .blog-tag:hover {
-  border-color: var(--muted-foreground);
-  color: var(--foreground);
+  color: var(--color-primary-foreground);
 }
 
 /* Generic card — thin border with hover accent */
