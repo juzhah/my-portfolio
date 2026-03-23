@@ -8,7 +8,7 @@ const blocksQuery = contentBlocks.map(
 
 export async function getProjectPost(slug: string) {
   const res = await fetch(
-    `${EnvConfig().strapi_url}/api/project-posts?filters[project][slug][$eq]=${slug}&${blocksQuery.join("&")}`,
+    `${EnvConfig().strapi_url}/api/project-posts?filters[project][slug][$eq]=${slug}&populate[project][populate]=*&${blocksQuery.join("&")}`,
     {
       method: "GET",
       headers: {
