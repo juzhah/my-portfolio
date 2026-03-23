@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { Tool, Tools } from "@/app/types";
 
 interface StackTool {
   name: string;
@@ -13,15 +10,23 @@ interface StackTool {
 }
 
 interface StackGridProps {
-  tools: StackTool[];
+  tools: Tools[];
 }
 
 export function StackGrid({ tools }: StackGridProps) {
-  const [activeTool, setActiveTool] = useState<string | null>(null);
-  const selected = tools.find((t) => t.name === activeTool);
-
   return (
     <div>
+      <div
+        className="text-[11px] tracking-[0.25em] uppercase font-semibold mb-4 pb-2 text-primary/50"
+        style={{
+          fontFamily: "var(--blog-font-mono)",
+          borderBottom:
+            "0.5px solid color-mix(in oklch, var(--primary) 50%, transparent)",
+        }}
+      >
+        Stackgrid
+      </div>
+
       <div
         style={{
           display: "grid",
@@ -30,16 +35,12 @@ export function StackGrid({ tools }: StackGridProps) {
         }}
       >
         {tools.map((tool) => {
-          const isActive = activeTool === tool.name;
-
           return (
-            <button
+            <div
               key={tool.name}
-              onClick={() => setActiveTool(isActive ? null : tool.name)}
-              data-active={isActive}
               className="blog-stack-card flex items-center gap-3 px-4 py-3 text-left cursor-pointer"
             >
-              <div
+              {/* <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold"
                 style={{
                   fontFamily: "var(--blog-font-mono)",
@@ -48,7 +49,7 @@ export function StackGrid({ tools }: StackGridProps) {
                 }}
               >
                 {tool.abbreviation}
-              </div>
+              </div> */}
               <div className="min-w-0">
                 <div
                   className="text-sm text-foreground font-medium truncate"
@@ -60,59 +61,12 @@ export function StackGrid({ tools }: StackGridProps) {
                   className="text-[10px] tracking-[0.1em] uppercase text-muted-foreground truncate"
                   style={{ fontFamily: "var(--blog-font-mono)" }}
                 >
-                  {tool.role}
+                  {/* {tool.role} */}
                 </div>
               </div>
-            </button>
+            </div>
           );
         })}
-      </div>
-
-      {/* Detail panel */}
-      <div className="mt-4" aria-live="polite">
-        <AnimatePresence mode="wait">
-          {selected ? (
-            <motion.div
-              key={selected.name}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="overflow-hidden"
-            >
-              <div
-                className="px-5 py-4 rounded-xl bg-muted"
-                style={{ border: "0.5px solid var(--border)" }}
-              >
-                <span
-                  className="text-sm text-foreground font-semibold"
-                  style={{ fontFamily: "var(--blog-font-ui)" }}
-                >
-                  {selected.name}
-                </span>
-                <span className="text-muted-foreground mx-2">&mdash;</span>
-                <span
-                  className="text-sm text-muted-foreground"
-                  style={{ fontFamily: "var(--blog-font-ui)" }}
-                >
-                  {selected.reason}
-                </span>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.p
-              key="placeholder"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.15 }}
-              className="text-sm text-muted-foreground italic py-4"
-              style={{ fontFamily: "var(--blog-font-mono)" }}
-            >
-              Click any card to learn why this tool was chosen.
-            </motion.p>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );
