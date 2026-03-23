@@ -38,12 +38,12 @@ export function ProjectHero({
 
   return (
     <header
-      className="relative md:w-11/12 max-w-400 mx-auto px-6 md:px-12 lg:px-24 pt-32 pb-16 border rounded-b-4xl overflow-clip h-160"
+      className="relative md:w-11/12 max-w-400 mx-auto px-6 md:px-12 lg:px-24 pt-48 border rounded-b-4xl overflow-clip pb-12"
       style={{ borderBottom: "0.5px solid var(--border)" }}
     >
-      <div className="relative max-w-5xl mx-auto z-50">
+      <div className="relative max-w-5xl mx-auto z-10">
         {/* Status badge */}
-        <div className="mb-8">
+        <div className="">
           <span
             className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase"
             style={{
@@ -61,7 +61,8 @@ export function ProjectHero({
 
         {/* Title — split on \n for optional italic second line */}
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl  text-foreground leading-[1.05] tracking-tight mb-4"
+          /* className="text-4xl sm:text-5xl md:text-6xl  text-foreground leading-[1.05] tracking-tight mb-4" */
+          className="text-4xl font-bold text-white group-hover:text-primary transition-colors mb-6"
           style={{ fontFamily: "var(--blog-font-display)" }}
         >
           {titleLines[0]}
@@ -77,14 +78,15 @@ export function ProjectHero({
 
         {/* Tagline */}
         <p
-          className="text-xl md:text-xl text-muted-foreground italic leading-relaxed mb-10 max-w-3xl"
+          /* className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl" */
+          className="text-gray-500 text-lg line-clamp-2 overflow-hidden group-hover:text-gray-400 transition-colors leading-relaxed min-h-[2.8em] max-w-3xl mb-8"
           style={{ fontFamily: "var(--blog-font-display)" }}
         >
           {description}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className="flex flex-wrap gap-2">
           {project_tags?.map((tag) => (
             <span
               key={tag.name}
