@@ -19,13 +19,13 @@ function SeparateCards({ metrics }: Pick<MetricsRowProps, "metrics">) {
             className="text-3xl md:text-4xl text-foreground tracking-tight mb-2"
             style={{ fontFamily: "var(--blog-font-display)" }}
           >
-            {metric.label}
+            {metric.value}
           </div>
           <div
             className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground"
             style={{ fontFamily: "var(--blog-font-mono)" }}
           >
-            {metric.value}
+            {metric.label}
           </div>
         </div>
       ))}
