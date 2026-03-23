@@ -62,7 +62,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${dmSerifDisplay.variable} ${dmMono.variable} ${syne.variable} antialiased dark `}
       >
         <AnimatedBackground />
-        <Navbar />
+
         {children}
 
         <Footer />

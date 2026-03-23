@@ -13,7 +13,11 @@ const navLinks = [
   { name: "Projects", href: "/#projects" },
 ];
 
-export default function Navbar() {
+export default function Navbar({
+  scrollEffect = true,
+}: {
+  scrollEffect: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -25,12 +29,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollEffectClass = scrolled
+    ? "bg-background/80 backdrop-blur-md shadow-lg border-b border-white/5 py-4"
+    : "bg-transparent/90 backdrop-blur-md py-6";
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md shadow-lg border-b border-white/5 py-4"
-          : "bg-transparent py-6"
+        scrollEffect
+          ? scrollEffectClass
+          : "bg-background shadow-lg border-b border-white/5 py-4"
       }`}
     >
       <div className="max-w-350 mx-auto px-6 lg:px-12 flex items-center justify-between ">

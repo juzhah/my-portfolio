@@ -1,6 +1,8 @@
 import { getProjects } from "@/app/data/get-projects";
 import { DynamicZone } from "@/components/blog-components/BlockRenderer";
 import { getProjectPost } from "../../data/get-project-post";
+import { ArticleNav } from "@/components/blog-components/ArticleNav";
+import { Block, HeadingBlock, Project } from "@/app/types";
 
 export async function generateStaticParams() {
   const posts = await getProjects();
@@ -16,7 +18,11 @@ export default async function ProjectPostPage({
   params: Promise<{ projectSlug: string }>;
 }) {
   const { projectSlug } = await params;
-  const post = await getProjectPost(projectSlug);
-  if (!post?.blocks?.length) return null;
-  return <DynamicZone blocks={post.blocks} />;
+
+  const { blocks }: { blocks: Block[]; project: Project } =
+    await getProjectPost(projectSlug);
+
+  if (!blocks?.length) return null;
+
+  return <DynamicZone blocks={blocks} />;
 }

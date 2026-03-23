@@ -1,9 +1,7 @@
-import { getProject } from "../../data/get-projects";
-
 import { getProjectPost } from "@/app/data/get-project-post";
-import { Block, HeadingBlock } from "@/app/types";
-import { ProjectHero } from "@/components/blog-components";
-import { ArticleNav } from "@/components/blog-components/ArticleNav";
+import { Block, HeadingBlock, Project } from "@/app/types";
+import { ProjectHero, StackGrid } from "@/components/blog-components";
+import Navbar from "@/components/sections/Navbar";
 
 export default async function Layout({
   children,
@@ -13,37 +11,30 @@ export default async function Layout({
   params: Promise<{ projectSlug: string }>;
 }) {
   const { projectSlug } = await params;
-  const project = await getProject(projectSlug);
 
-  const { blocks }: { blocks: Block[] } = await getProjectPost(projectSlug);
-
-  const navSections = blocks
-    ?.filter(
-      (block): block is HeadingBlock =>
-        block.__component === "post-components.heading",
-    )
-    .map((block): string => block?.title?.toLowerCase());
+  const { blocks, project }: { blocks: Block[]; project: Project } =
+    await getProjectPost(projectSlug);
 
   return (
     <>
+      <Navbar scrollEffect={false} />
       {/* Hero Section */}
       <ProjectHero {...project} />
 
       {/* Main Content Layout */}
       {/* Two-column content area TODO: Fix when no article nav available TODO: Create different layout according to article_type*/}
-      <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-16 pt-16 pb-28">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-12 pt-16 pb-28 ">
         {/* Sticky nav */}
-        {navSections.length > 0 ? (
-          <aside>
+        {/* <aside>
+          <div className="sticky top-28">
             <ArticleNav sections={navSections} />
-          </aside>
-        ) : (
-          /* TODO: replace this when finished */
-          <div></div>
-        )}
-
+          </div>
+        </aside> */}
         {/* Article content */}
-        {children}
+        <article className="space-y-32 relative w-full max-w-7xl blog-article">
+          <StackGrid tools={project.tools} />
+          {children}
+        </article>
       </div>
     </>
   );
