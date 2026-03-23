@@ -31,7 +31,7 @@ export function ArticleNav({ sections }: { sections: string[] }) {
     sections.length > 0 ? ((activeIndex + 1) / sections.length) * 100 : 0;
 
   return (
-    <nav className="sticky top-28 flex flex-col select-none">
+    <nav className="flex flex-col select-none">
       {/* Header — current / total */}
       <div className="mb-5">
         <p
@@ -133,7 +133,7 @@ export function ArticleNav({ sections }: { sections: string[] }) {
       </ul>
 
       {/* Footer rule */}
-      <div
+      {/* <div
         className="mt-6 pt-4"
         style={{ borderTop: "0.5px solid var(--border)" }}
       >
@@ -143,7 +143,7 @@ export function ArticleNav({ sections }: { sections: string[] }) {
         >
           Preview · {new Date().getFullYear()}
         </p>
-      </div>
+      </div> */}
     </nav>
   );
 }
