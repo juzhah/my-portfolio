@@ -118,7 +118,7 @@ export default function Hero() {
                     fill
                     priority
                     fetchPriority="high"
-                    quality={100}
+                    quality={90}
                     className="w-full h-full object-cover grayscale hover:filter-none transition-all duration-500 will-change-transform group-hover:scale-105"
                   />
                 </div>

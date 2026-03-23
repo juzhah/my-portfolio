@@ -22,12 +22,16 @@ export function DynamicZone({ blocks }: DynamicZoneProps) {
   if (!blocks?.length) return null;
 
   return (
-    <div className="dynamic-zone">
+    <article className="space-y-32 relative w-full max-w-7xl blog-article">
       {blocks.map((block, idx) => {
         const { __component, id, ...props } = block;
 
         const componentKey = idx + id;
         const BlockComponent = blockRegistry[__component];
+
+        if (__component === "post-components.paragraph") {
+          console.log(block);
+        }
 
         if (!BlockComponent) {
           // Fail gracefully in prod, warn loudly in dev
@@ -42,6 +46,6 @@ export function DynamicZone({ blocks }: DynamicZoneProps) {
         // Spread the block props, excluding meta fields
         return <BlockComponent key={componentKey} {...props} />;
       })}
-    </div>
+    </article>
   );
 }

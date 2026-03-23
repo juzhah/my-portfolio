@@ -151,7 +151,7 @@ export function ProjectHero({
           }
           alt={cover?.alternativeText || title}
           fill
-          quality={100}
+          quality={90}
           loading="eager"
           className="h-full object-cover"
         />

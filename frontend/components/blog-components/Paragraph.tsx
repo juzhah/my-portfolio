@@ -1,3 +1,5 @@
+import { MarkdownRenderer } from "./MardownRenderer";
+
 export default function Paragraph({ text }: { text: string }) {
-  return <p className="mb-16">{text}</p>;
+  return <MarkdownRenderer content={text} />;
 }

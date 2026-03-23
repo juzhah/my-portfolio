@@ -43,7 +43,7 @@ export default async function Layout({
         )}
 
         {/* Article content */}
-        <article className="space-y-20 min-w-0">{children}</article>
+        {children}
       </div>
     </>
   );
